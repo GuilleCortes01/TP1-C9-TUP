@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="../img/Logo_Principal.png">
-  <title>Publicar oferta - MiProfe</title>
+  <title>Editar perfil - MiProfe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -41,14 +41,20 @@
   </header>
 
   <main>
-    <section id="publicar-oferta">
-      <h2>Publicar oferta de clases</h2>
+
+    <section id="editar-perfil">
+      <h2>Editar mi perfil</h2>
 
       <form action="#" method="post" class="form-card">
 
         <div class="campo">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" value="Ana Giménez" required>
+        </div>
+
+        <div class="campo">
           <label for="materia">Materia</label>
-          <input type="text" id="materia" name="materia" placeholder="Matemática" required>
+          <input type="text" id="materia" name="materia" value="Matemática" required>
         </div>
 
         <div class="campo">
@@ -56,20 +62,20 @@
           <select id="nivel" name="nivel" required>
             <option value="">Seleccioná un nivel</option>
             <option value="primario">Primario</option>
-            <option value="secundario">Secundario</option>
+            <option value="secundario" selected>Secundario</option>
             <option value="universitario">Universitario</option>
             <option value="adultos">Adultos</option>
           </select>
         </div>
 
         <div class="campo">
-          <label for="descripcion">Descripción</label>
-          <textarea id="descripcion" name="descripcion" placeholder="Contales a los alumnos sobre tu experiencia y metodología"></textarea>
+          <label for="descripcion">Sobre mí</label>
+          <textarea id="descripcion" name="descripcion" placeholder="Contales a los alumnos sobre tu experiencia y metodología">Profesora de Matemática con 8 años de experiencia preparando alumnos de secundario y primer año de facultad.</textarea>
         </div>
 
         <div class="campo">
           <label for="precio">Precio por hora</label>
-          <input type="number" id="precio" name="precio" placeholder="4500" required>
+          <input type="number" id="precio" name="precio" value="4500" required>
         </div>
 
         <fieldset class="campo-modalidad">
@@ -77,13 +83,13 @@
           <div class="modalidad-opciones">
 
             <div class="cntr">
-              <input type="checkbox" id="modalidad-virtual" name="modalidad" value="virtual" class="cbx-input">
+              <input type="checkbox" id="modalidad-virtual" name="modalidad" value="virtual" class="cbx-input" checked>
               <label for="modalidad-virtual" class="cbx"></label>
               <label for="modalidad-virtual" class="lbl">Virtual</label>
             </div>
 
             <div class="cntr">
-              <input type="checkbox" id="modalidad-presencial" name="modalidad" value="presencial" class="cbx-input">
+              <input type="checkbox" id="modalidad-presencial" name="modalidad" value="presencial" class="cbx-input" checked>
               <label for="modalidad-presencial" class="cbx"></label>
               <label for="modalidad-presencial" class="lbl">Presencial</label>
             </div>
@@ -92,22 +98,23 @@
         </fieldset>
 
         <div class="campo">
-          <label for="zona">Zona / Ubicación</label>
-          <input type="text" id="zona" name="zona" placeholder="Ej: Barrio Sur, San Miguel de Tucumán">
+          <label for="ubicacion">Ubicación</label>
+          <input type="text" id="ubicacion" name="ubicacion" value="San Miguel de Tucumán">
         </div>
 
         <div class="campo">
           <label for="horarios">Horarios disponibles</label>
-          <input type="text" id="horarios" name="horarios" placeholder="Ej: Lunes a viernes de 16 a 20hs">
+          <input type="text" id="horarios" name="horarios" value="Lunes a viernes de 16 a 20hs">
         </div>
 
         <div class="form-acciones">
-          <button type="submit" class="btn-guardar">Publicar oferta</button>
+          <button type="submit" class="btn-guardar">Guardar cambios</button>
           <a href="PrincipalProfesor.html" class="btn-cancelar">Cancelar</a>
         </div>
 
       </form>
     </section>
+
   </main>
 
   <footer>

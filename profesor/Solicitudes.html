@@ -2,23 +2,41 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="../Estilo/style.css">
+  <link rel="stylesheet" href="../Estilo/profesor.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="../img/Logo_Principal.png">
   <title>Solicitudes - MiProfe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
   <header>
-    <div class="logo">
-      <a href="PrincipalProfesor.html"><h1>MiProfe</h1></a>
-    </div>
-    <nav>
-      <ul>
+    <nav class="navbar">
+
+      <a href="PrincipalProfesor.html" class="logo">
+        <img src="../img/Logo_Principal.png" alt="">
+        MiProfe
+      </a>
+
+      <input type="checkbox" id="menu-toggle">
+
+      <label for="menu-toggle" class="menu__button">
+        <span></span>
+        <span></span>
+      </label>
+
+      <ul class="nav-links">
         <li><a href="PrincipalProfesor.html">Inicio</a></li>
         <li><a href="Solicitudes.html">Solicitudes</a></li>
         <li><a href="Grupos.html">Grupos</a></li>
         <li><a href="Chat.html">Chat</a></li>
         <li><a href="PublicarOferta.html">Publicar oferta</a></li>
+        <li><a href="../index.html" class="nav-login">Cerrar sesión</a></li>
       </ul>
+
     </nav>
   </header>
 
@@ -26,25 +44,35 @@
     <section id="solicitudes">
       <h2>Solicitudes de alumnos</h2>
 
-      <article>
-        <h3>Martina Torres</h3>
-        <p>Materia: Álgebra</p>
-        <p>Horario propuesto: Miércoles 18hs</p>
-        <form action="#" method="post">
-          <button type="submit" name="accion" value="aceptar">Aceptar</button>
-          <button type="submit" name="accion" value="rechazar">Rechazar</button>
-        </form>
-      </article>
+      <div class="solicitudes-lista">
 
-      <article>
-        <h3>Bruno Fariña</h3>
-        <p>Materia: Trigonometría</p>
-        <p>Horario propuesto: Sábado 10hs</p>
-        <form action="#" method="post">
-          <button type="submit" name="accion" value="aceptar">Aceptar</button>
-          <button type="submit" name="accion" value="rechazar">Rechazar</button>
-        </form>
-      </article>
+        <article class="solicitud-card">
+          <div class="avatar avatar--chico" aria-hidden="true">MT</div>
+          <div class="solicitud-info">
+            <h3>Martina Torres</h3>
+            <p><strong>Materia:</strong> Álgebra</p>
+            <p><strong>Horario propuesto:</strong> Miércoles 18hs</p>
+          </div>
+          <form action="#" method="post" class="solicitud-acciones">
+            <button type="submit" name="accion" value="aceptar" class="btn-aceptar">Aceptar</button>
+            <button type="submit" name="accion" value="rechazar" class="btn-rechazar">Rechazar</button>
+          </form>
+        </article>
+
+        <article class="solicitud-card">
+          <div class="avatar avatar--chico" aria-hidden="true">BF</div>
+          <div class="solicitud-info">
+            <h3>Bruno Fariña</h3>
+            <p><strong>Materia:</strong> Trigonometría</p>
+            <p><strong>Horario propuesto:</strong> Sábado 10hs</p>
+          </div>
+          <form action="#" method="post" class="solicitud-acciones">
+            <button type="submit" name="accion" value="aceptar" class="btn-aceptar">Aceptar</button>
+            <button type="submit" name="accion" value="rechazar" class="btn-rechazar">Rechazar</button>
+          </form>
+        </article>
+
+      </div>
     </section>
   </main>
 
