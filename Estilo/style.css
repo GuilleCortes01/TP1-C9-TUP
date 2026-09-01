@@ -502,3 +502,44 @@ footer {
   }
 
 }
+
+.Principal-Registro {
+  min-height: 78vh;
+  padding: 4rem 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  background-image: url("../img/Fondo_Login_Register.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Principal-inicio {
+  min-height: 78vh;
+  padding: 15px 0 15px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  background-image: url("../img/Fondo_Login_Register.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.footer-nav {
+  min-height: 12vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin:0 0 0 20px;
+}
