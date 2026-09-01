@@ -2,55 +2,99 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="../Estilo/style.css">
+  <link rel="stylesheet" href="../Estilo/profesor.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="../img/Logo_Principal.png">
   <title>Chat - MiProfe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
   <header>
-    <div class="logo">
-      <a href="PrincipalProfesor.html"><h1>MiProfe</h1></a>
-    </div>
-    <nav>
-      <ul>
+    <nav class="navbar">
+
+      <a href="PrincipalProfesor.html" class="logo">
+        <img src="../img/Logo_Principal.png" alt="">
+        MiProfe
+      </a>
+
+      <input type="checkbox" id="menu-toggle">
+
+      <label for="menu-toggle" class="menu__button">
+        <span></span>
+        <span></span>
+      </label>
+
+      <ul class="nav-links">
         <li><a href="PrincipalProfesor.html">Inicio</a></li>
         <li><a href="Solicitudes.html">Solicitudes</a></li>
         <li><a href="Grupos.html">Grupos</a></li>
         <li><a href="Chat.html">Chat</a></li>
         <li><a href="PublicarOferta.html">Publicar oferta</a></li>
+        <li><a href="../index.html" class="nav-login">Cerrar sesión</a></li>
       </ul>
+
     </nav>
   </header>
 
   <main>
 
-    <aside id="conversaciones">
-      <h2>Conversaciones</h2>
-      <ul>
-        <li><a href="#">Martina Torres</a></li>
-        <li><a href="#">Grupo de Matemática</a></li>
-        <li><a href="#">Bruno Fariña</a></li>
-      </ul>
-    </aside>
+    <div class="chat-layout">
 
-    <section id="chat-activo">
-      <h2>Martina Torres</h2>
+      <aside id="conversaciones" class="conversaciones-panel">
+        <h2>Conversaciones</h2>
+        <ul class="conversaciones-lista">
+          <li>
+            <a href="#" class="activa">
+              <span class="avatar avatar--mini" aria-hidden="true">MT</span>
+              Martina Torres
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="avatar avatar--mini" aria-hidden="true">GM</span>
+              Grupo de Matemática
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="avatar avatar--mini" aria-hidden="true">BF</span>
+              Bruno Fariña
+            </a>
+          </li>
+        </ul>
+      </aside>
 
-      <ul id="mensajes">
-        <li>
-          <p>Martina: Hola profe, ¿confirmamos la clase del miércoles?</p>
-        </li>
-        <li>
-          <p>Vos: Sí, nos vemos a las 18hs.</p>
-        </li>
-      </ul>
+      <section id="chat-activo" class="chat-panel">
 
-      <form action="#" method="post">
-        <label for="mensaje">Mensaje</label>
-        <input type="text" id="mensaje" name="mensaje" placeholder="Escribí un mensaje...">
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
+        <div class="chat-panel-header">
+          <span class="avatar avatar--mini" aria-hidden="true">MT</span>
+          <h2>Martina Torres</h2>
+        </div>
+
+        <ul id="mensajes" class="mensajes">
+          <li class="mensaje mensaje-otro">
+            <span class="mensaje-autor">Martina</span>
+            Hola profe, ¿confirmamos la clase del miércoles?
+          </li>
+          <li class="mensaje mensaje-propio">
+            <span class="mensaje-autor">Vos</span>
+            Sí, nos vemos a las 18hs.
+          </li>
+        </ul>
+
+        <form action="#" method="post" class="chat-form">
+          <label for="mensaje" class="sr-only">Mensaje</label>
+          <input type="text" id="mensaje" name="mensaje" placeholder="Escribí un mensaje...">
+          <button type="submit">Enviar</button>
+        </form>
+
+      </section>
+
+    </div>
 
   </main>
 

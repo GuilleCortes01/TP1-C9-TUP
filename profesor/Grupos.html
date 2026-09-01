@@ -2,23 +2,41 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="../Estilo/style.css">
+  <link rel="stylesheet" href="../Estilo/profesor.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="../img/Logo_Principal.png">
   <title>Grupos - MiProfe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
   <header>
-    <div class="logo">
-      <a href="PrincipalProfesor.html"><h1>MiProfe</h1></a>
-    </div>
-    <nav>
-      <ul>
+    <nav class="navbar">
+
+      <a href="PrincipalProfesor.html" class="logo">
+        <img src="../img/Logo_Principal.png" alt="">
+        MiProfe
+      </a>
+
+      <input type="checkbox" id="menu-toggle">
+
+      <label for="menu-toggle" class="menu__button">
+        <span></span>
+        <span></span>
+      </label>
+
+      <ul class="nav-links">
         <li><a href="PrincipalProfesor.html">Inicio</a></li>
         <li><a href="Solicitudes.html">Solicitudes</a></li>
         <li><a href="Grupos.html">Grupos</a></li>
         <li><a href="Chat.html">Chat</a></li>
         <li><a href="PublicarOferta.html">Publicar oferta</a></li>
+        <li><a href="../index.html" class="nav-login">Cerrar sesión</a></li>
       </ul>
+
     </nav>
   </header>
 
@@ -26,17 +44,23 @@
     <section id="grupos">
       <h2>Mis grupos</h2>
 
-      <article>
-        <h3>Grupo de Matemática</h3>
-        <p>Integrantes: 5 alumnos</p>
-        <a href="Chat.html">Ir al chat del grupo</a>
-      </article>
+      <div class="resumen-grid">
 
-      <article>
-        <h3>Grupo de Álgebra avanzada</h3>
-        <p>Integrantes: 3 alumnos</p>
-        <a href="Chat.html">Ir al chat del grupo</a>
-      </article>
+        <article class="stat-card stat-card--violeta">
+          <h3>Grupo de Matemática</h3>
+          <p class="stat-numero">5</p>
+          <p>alumnos en el grupo</p>
+          <a href="Chat.html" class="stat-link">Ir al chat del grupo</a>
+        </article>
+
+        <article class="stat-card stat-card--verde">
+          <h3>Grupo de Álgebra avanzada</h3>
+          <p class="stat-numero">3</p>
+          <p>alumnos en el grupo</p>
+          <a href="Chat.html" class="stat-link">Ir al chat del grupo</a>
+        </article>
+
+      </div>
     </section>
   </main>
 
