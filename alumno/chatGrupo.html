@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat - MiProfe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Estilo/style.css">
+    <link rel="stylesheet" href="../Estilo/styleAlumnos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+     <link rel="icon" href="../img/Logo_Principal.png">
+</head>
+<body>
+    <header>
+    
+    <nav>
+      <nav class="navbar">
+      <a href="PrincipalProfesor.html" class="logo">
+         <img src="../img/Logo_Principal.png" alt="">
+            MiProfe
+          </a>
+          <input type="checkbox" id="menu-toggle">
+
+      <label for="menu-toggle" class="menu__button">
+        <span></span>
+        <span></span>
+      </label>
+      <ul class="nav-links">
+        <li><a href="principalAlumno.html" class="nav-login">Inicio</a></li>
+        <li><a href="MisProfesores.html">Mis profesores</a></li>
+        <li><a href="grupos.html">Grupos</a></li>
+        <li><a href="../index.html" class="nav-login">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-container chat-layout">
+
+    <!-- Panel izquierdo: Lista de conversaciones -->
+    <aside class="chat-sidebar">
+      <h2 class="sidebar-title">Conversaciones</h2>
+      <ul class="contact-list">
+        <li class="contact-item active">
+          <a href="#">
+            <div class="contact-info">
+              <h4>Lucía Molina</h4>
+              <p>Materia: Matemática</p>
+            </div>
+          </a>
+        </li>
+        <li class="contact-item">
+          <a href="#">
+            <div class="contact-info">
+              <h4>Grupo de Matemática</h4>
+              <p>5 integrantes</p>
+            </div>
+          </a>
+        </li>
+        <li class="contact-item">
+          <a href="#">
+            <div class="contact-info">
+              <h4>Sofía Vera</h4>
+              <p>Materia: Física</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Panel derecho: Chat activo -->
+    <section class="chat-window">
+      <div class="chat-header">
+        <h2>Lucía Molina</h2>
+        <span class="status">En línea</span>
+      </div>
+
+      <div class="chat-messages">
+        <!-- Mensaje recibido -->
+        <div class="message received">
+          <p>Hola, ¿cómo estás? Nos vemos el miércoles a las 16hs.</p>
+          <span class="time">10:30</span>
+        </div>
+        
+        <!-- Mensaje enviado -->
+        <div class="message sent">
+          <p>¡Perfecto! Ahí estaré.</p>
+          <span class="time">10:32</span>
+        </div>
+      </div>
+
+      <!-- Área para escribir -->
+      <form action="#" method="post" class="chat-input-area">
+        <label for="mensaje" class="visually-hidden">Mensaje</label>
+        <input type="text" id="mensaje" name="mensaje" placeholder="Escribí un mensaje..." autocomplete="off" required>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 MiProfe. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

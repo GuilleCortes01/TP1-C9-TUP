@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../estilo/styleAlumnos.css">
+    <link rel="stylesheet" href="../estilo/style.css">
+     <title>Inicio - MiProfe</title>
+</head>
+<body>
+     <header>
+    
+    <nav class="navbar">
+     
+      <a href="index.html" class="logo">
+      <img src="../img/Logo_Principal.png" alt="">
+      MiProfe
+       </a>
+
+    <!-- Botón hamburguesa -->
+    <input type="checkbox" id="menu-toggle">
+
+    <label for="menu-toggle" class="menu__button">
+      <span></span>
+      <span></span>
+    </label>
+      <ul class="nav-links">
+        <li><a href="principalAlumno.html">Inicio</a></li>
+        <li><a href="MisProfesores.html">Mis profesores</a></li>
+        <li><a href="grupos.html">Grupos</a></li>
+        <li><a href="chatGrupo.html">Chat</a></li>
+        <li><a href="../index.html" class="nav-login">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+
+    <section id="filtros">
+      <h2>Buscar profesores</h2>
+      <form action="#" method="get" class="form-busqueda">
+        <label for="materia">Materia</label>
+        <select id="materia" name="materia">
+          <option value="">Todas</option>
+          <option value="matematica">Matemática</option>
+          <option value="ingles">Inglés</option>
+          <option value="fisica">Física</option>
+          <option value="quimica">Química</option>
+        </select>
+
+        <label for="modalidad">Modalidad</label>
+        <select id="modalidad" name="modalidad">
+          <option value="">Todas</option>
+          <option value="virtual">Virtual</option>
+          <option value="presencial">Presencial</option>
+          <option value="ambas">Ambas</option>
+        </select>
+       
+           <label for="precio">Precio máximo</label>
+           <input type="number" class="input-buscar" id="precio"  name="precio" placeholder="$5000">
+        
+        
+           <label for="horario">Horario</label>
+           <input type="text" class="input-buscar" id="horario"  name="horario" placeholder="Ej: Sábados">
+       
+        <button class="boton-buscar" type="submit">Buscar</button>
+      </form>
+    </section>
+
+    <section id="cercanos">
+      <h2>Profesores cercanos</h2>
+
+      <article>
+        <h3>Lucía Molina</h3>
+        <p>Materia: Matemática</p>
+        <p>Modalidad: Virtual</p>
+        <p>Precio: $4.500/hora</p>
+        <p>Horarios: Lunes a viernes, tarde</p>
+        <a href="perfilProfesor.html">Ver perfil</a>
+      </article>
+
+      <article>
+        <h3>Diego Ruiz</h3>
+        <p>Materia: Inglés</p>
+        <p>Modalidad: Presencial</p>
+        <p>Precio: $5.000/hora</p>
+        <p>Horarios: Sábados, mañana</p>
+        <a href="perfilProfesor.html">Ver perfil</a>
+      </article>
+    </section>
+
+    <section id="recomendados">
+      <h2>Recomendados para vos</h2>
+
+      <article>
+        <h3>Sofía Vera</h3>
+        <p>Materia: Física</p>
+        <p>Modalidad: Ambas</p>
+        <p>Calificación: 4.9</p>
+        <a href="perfilProfesor.html">Ver perfil</a>
+      </article>
+
+      <article>
+        <h3>Juan Paz</h3>
+        <p>Materia: Química</p>
+        <p>Modalidad: Virtual</p>
+        <p>Calificación: 4.8</p>
+        <a href="perfilProfesor.html">Ver perfil</a>
+      </article>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 MiProfe. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

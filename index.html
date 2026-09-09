@@ -3,9 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Encontra tu profesor particular en Tucumán">
+    <title>MiProfe - Encontra tu profesor particular en Tucumán</title>
+    <link rel="stylesheet" href="./Estilo/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+  <header>
+    <nav class="navbar">
+
+    <a href="index.html" class="logo">
+      <img src="./img/Logo_Principal.png" alt="">
+      MiProfe
+    </a>
+
+    <!-- Botón hamburguesa -->
+    <input type="checkbox" id="menu-toggle">
+
+    <label for="menu-toggle" class="menu__button">
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- Menú -->
+    <ul class="nav-links">
+      <li>
+        <a href="Login.html" class="nav-login">
+          Iniciar sesión
+        </a>
+      </li>
+
+      <li>
+        <a href="Register.html" class="nav-register">
+          Registrarse
+        </a>
+      </li>
+    </ul>
+
+  </nav>
+  </header>
+    <main class="Principal-inicio">
+    <section id="hero">
+      <h2>Encontrá el profesor particular ideal para vos</h2>
+      <p>Clases virtuales, presenciales o ambas. Buscá, chateá y coordiná tus clases en un solo lugar.</p>
+      <a href="Register.html?rol=alumno">Soy alumno</a>
+      <a href="Register.html?rol=profesor">Soy profesor</a>
+    </section>
+   <section id="como-funciona">
+      <h2>Cómo funciona</h2>
+
+      <article>
+        <h3>Para alumnos</h3>
+        <ol>
+          <li>Buscá profesores por materia, zona y horario</li>
+          <li>Chateá y coordiná el horario de tu clase</li>
+          <li>Tomá tu clase virtual o presencial</li>
+        </ol>
+      </article>
+
+      <article>
+        <h3>Para profesores</h3>
+        <ol>
+          <li>Creá tu perfil y publicá tu oferta de clases</li>
+          <li>Recibí y gestioná solicitudes de alumnos</li>
+          <li>Dictá tus clases y sumá reseñas</li>
+        </ol>
+      </article>
+    </section>
+    <section id="beneficios">
+      <h2>Por qué elegir MiProfe</h2>
+      <article>
+        <h3>Cerca tuyo</h3>
+        <p>Encontrá profesores en tu zona o que dicten clases virtuales.</p>
+      </article>
+      <article>
+        <h3>Comunicación directa</h3>
+        <p>Chat integrado para coordinar todo sin salir de la plataforma.</p>
+      </article>
+      <article>
+        <h3>Grupos de estudio</h3>
+        <p>Sumate a grupos con otros alumnos y tu profesor.</p>
+      </article>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 MiProfe. Todos los derechos reservados.</p>
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="#">Contacto</a></li>
+        <li><a href="#">Sobre nosotros</a></li>
+        <li><a href="#">Redes sociales</a></li>
+      </ul>
+    </nav>
+  </footer>
 </body>
 </html>

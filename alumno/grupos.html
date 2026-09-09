@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grupos - MiProfe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Estilo/style.css">
+    <link rel="stylesheet" href="../Estilo/styleAlumnos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+     <link rel="icon" href="../img/Logo_Principal.png">
+</head>
+<body>
+    <header>
+    
+    <nav class="navbar">
+      <a href="PrincipalProfesor.html" class="logo">
+         <img src="../img/Logo_Principal.png" alt="">
+            MiProfe
+          </a>
+          <input type="checkbox" id="menu-toggle">
+
+      <label for="menu-toggle" class="menu__button">
+        <span></span>
+        <span></span>
+      </label>
+      <ul class="nav-links">
+        <li><a href="principalAlumno.html" class="nav-login">Inicio</a></li>
+        <li><a href="MisProfesores.html">Mis profesores</a></li>
+        <li><a href="chatGrupo.html">Chat</a></li>
+        <li><a href="../index.html" class="nav-login">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-container">
+    
+    <section id="grupos">
+      <h2 class="section-title">Aqui se encuentran tus grupos</h2>
+
+      <div class="grupos-grid">
+        <!-- Tarjeta de Grupo 1 -->
+        <article class="grupo-card">
+          <div class="grupo-header">
+            <h3>Matemática</h3>
+            <p class="profesor-name">Prof. Lucía Molina</p>
+          </div>
+          
+          <div class="grupo-body">
+            <span class="badge-integrantes">
+              <strong>5</strong> integrantes
+            </span>
+          </div>
+
+          <div class="grupo-actions">
+            <a href="chatGrupo.html" class="btn btn-primary btn-block">Ir al chat del grupo</a>
+          </div>
+        </article>
+
+        <!-- Tarjeta de Grupo 2 -->
+        <article class="grupo-card">
+          <div class="grupo-header">
+            <h3>Física</h3>
+            <p class="profesor-name">Prof. Sofía Vera</p>
+          </div>
+          
+          <div class="grupo-body">
+            <span class="badge-integrantes">
+              <strong>3</strong> integrantes
+            </span>
+          </div>
+
+          <div class="grupo-actions">
+            <a href="chatGrupo.html" class="btn btn-primary btn-block">Ir al chat del grupo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 MiProfe. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

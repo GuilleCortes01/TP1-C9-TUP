@@ -1,0 +1,545 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+
+  /* =========================
+     COLORES
+  ========================= */
+
+  --color-primary: #2d8cf0;
+  --color-primary-dark: #1769aa;
+  --color-secondary: #87ceeb;
+
+  --navbar-bg: #c9dff1;
+  --navbar-text: #323232;
+
+  --form-bg: lightblue;
+  --input-bg: beige;
+
+  --font-color: #323232;
+  --font-color-sub: #666666;
+
+  --border-color: #000000;
+
+  /* =========================
+     SOMBRAS
+  ========================= */
+
+  --shadow: 4px 4px var(--border-color);
+
+  /* =========================
+     TIPOGRAFÍAS
+  ========================= */
+
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+
+  /* =========================
+     BORDES
+  ========================= */
+
+  --border-radius: 5px;
+}
+body {
+  font-family: var(--font-body);
+  color: var(--font-color);
+}
+
+h1,
+h2,
+h3,
+.logo,
+.title {
+  font-family: var(--font-heading);
+}
+.nav-links a,
+.nav-login,
+.nav-register {
+  font-family: var(--font-body);
+  font-weight: 900;
+}
+/* =========================
+   NAVBAR
+========================= */
+
+header {
+  width: 100%;
+  background-color: var(--navbar-bg);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.navbar {
+  position: relative;
+  flex-wrap: wrap;
+
+  width: 100%;
+  min-height: 10vh;
+
+  padding: 1rem 5vw;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: var(--navbar-bg);
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  color: var(--color-primary);
+
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+
+  text-decoration: none;
+}
+
+.logo img {
+  width: 75px;
+  height: 75px;
+
+  object-fit: contain;
+}
+
+.logo span {
+  line-height: 1;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--navbar-text);
+
+  font-family: var(--font-body);
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-primary);
+}
+
+/* =========================
+   BOTÓN LOGIN
+========================= */
+
+.nav-login {
+  display: inline-block;
+
+  padding: 0.6rem 1rem;
+
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+
+  background-color: var(--color-secondary);
+
+  box-shadow: var(--shadow);
+
+  transition: 0.15s ease;
+}
+
+.nav-login:hover {
+  color: var(--navbar-text) !important;
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px var(--border-color);
+}
+
+/* =========================
+   BOTÓN REGISTRARSE
+========================= */
+
+.nav-register {
+  display: inline-block;
+
+  padding: 0.6rem 1rem;
+
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+
+  background-color: var(--color-secondary);
+
+  color: var(--font-color) !important;
+
+  box-shadow: var(--shadow);
+
+  transition: 0.15s ease;
+}
+
+.nav-register:hover {
+  color: var(--font-color) !important;
+
+  transform: translate(2px, 2px);
+
+  box-shadow: 2px 2px var(--border-color);
+}
+
+/* =========================
+   HAMBURGER MENU
+========================= */
+
+#menu-toggle {
+  display: none;
+}
+
+.menu__button {
+  display: none;
+
+  position: relative;
+
+  width: 40px;
+  height: 40px;
+
+  cursor: pointer;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background-color: var(--navbar-bg);
+
+  border: 2px solid var(--border-color);
+
+  box-shadow: var(--shadow);
+
+  transition: 0.2s ease;
+}
+
+/* Barras */
+
+.menu__button span {
+  position: absolute;
+
+  width: 20px;
+  height: 2px;
+
+  background-color: var(--navbar-text);
+
+  border-radius: 2px;
+
+  transition: 0.3s ease;
+}
+
+.menu__button span:first-child {
+  transform: translateY(-4px);
+}
+
+.menu__button span:last-child {
+  transform: translateY(4px);
+}
+
+/* =========================
+   HAMBURGER ABIERTO
+========================= */
+
+#menu-toggle:checked + .menu__button {
+  background-color: var(--color-primary);
+}
+
+#menu-toggle:checked + .menu__button span {
+  background-color: white;
+}
+
+#menu-toggle:checked + .menu__button span:first-child {
+  transform: rotate(45deg);
+}
+
+#menu-toggle:checked + .menu__button span:last-child {
+  transform: rotate(-45deg);
+}
+
+/* Evita que el <ul> del botón afecte al nav */
+.learn-more ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.login-main {
+  min-height: 78vh;
+  padding: 4rem 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  background-image: url("../img/Fondo_Login_Register.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#login h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+.form {
+  --input-focus: var(--color-primary);
+  --font-color: var(--font-color);
+  --font-color-sub: var(--font-color-sub);
+  --bg-color: var(--input-bg);
+  --main-color: var(--border-color);
+
+  width: 300px;
+  padding: 1.5rem;
+
+  background: var(--form-bg);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  gap: 1.2rem;
+
+  border-radius: var(--border-radius);
+  border: 2px solid var(--border-color);
+  box-shadow: var(--shadow);
+}
+
+.title {
+  color: var(--font-color);
+  font-weight: 900;
+  font-size: 20px;
+  margin-bottom: 1rem;
+}
+
+.title span {
+  color: var(--font-color-sub);
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.input {
+  width: 100%;
+  height: 45px;
+
+  border-radius: var(--border-radius);
+  border: 2px solid var(--border-color);
+
+  background-color: var(--input-bg);
+  box-shadow: var(--shadow);
+
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--font-color);
+
+  padding: 0.5rem 0.75rem;
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--font-color-sub);
+  opacity: 0.8;
+}
+
+.input:focus {
+  border: 2px solid var(--input-focus);
+}
+
+.login-with {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 0.3rem;
+}
+
+.button-log {
+  cursor: pointer;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+
+  background-color: var(--input-bg);
+  box-shadow: var(--shadow);
+
+  color: var(--font-color);
+  font-size: 25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: var(--main-color);
+}
+
+.button-log:active, .button-confirm:active {
+  box-shadow: 0px 0px var(--main-color);
+  transform: translate(3px, 3px);
+}
+
+.button-confirm {
+  margin: 1.5rem auto 0 auto;
+
+  width: 130px;
+  height: 42px;
+
+  border-radius: var(--border-radius);
+  border: 2px solid var(--border-color);
+
+  background-color: var(--input-bg);
+  box-shadow: var(--shadow);
+
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--font-color);
+
+  cursor: pointer;
+}
+
+footer {
+  min-height: 12vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem;
+
+  background-color: var(--navbar-bg);
+  border-top: 2px solid var(--border-color);
+
+  color: var(--font-color);
+  font-size: 0.9rem;
+}
+
+/* =========================
+   TABLET / CELULAR
+========================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    min-height: 9vh;
+
+    padding: 1rem 5vw;
+
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  /* Mostrar botón */
+
+  .menu__button {
+    display: flex;
+  }
+
+  /* Ocultar menú */
+
+.nav-links {
+  display: none;
+
+  width: 100%;
+
+  padding: 1.5rem 1rem;
+
+  flex-direction: column;
+  align-items: center;
+
+  gap: 1.2rem;
+
+  background-color: var(--navbar-bg);
+}
+
+  /* Mostrar menú */
+
+  #menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+
+    text-align: center;
+  }
+
+  .nav-login,
+  .nav-register {
+    display: block;
+
+    width: 90%;
+
+    margin: 0 auto;
+  }
+
+}
+
+.Principal-Registro {
+  min-height: 78vh;
+  padding: 4rem 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  background-image: url("../img/Fondo_Login_Register.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Principal-inicio {
+  min-height: 78vh;
+  padding: 15px 0 15px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  background-image: url("../img/Fondo_Login_Register.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.footer-nav {
+  min-height: 12vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin:0 0 0 20px;
+}

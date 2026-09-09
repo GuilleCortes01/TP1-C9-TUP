@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../Estilo/style.css">
+  <link rel="stylesheet" href="../Estilo/profesor.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="../img/Logo_Principal.png">
+  <title>Editar perfil - MiProfe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+
+      <a href="PrincipalProfesor.html" class="logo">
+        <img src="../img/Logo_Principal.png" alt="">
+        MiProfe
+      </a>
+
+      <input type="checkbox" id="menu-toggle">
+
+      <label for="menu-toggle" class="menu__button">
+        <span></span>
+        <span></span>
+      </label>
+
+      <ul class="nav-links">
+        <li><a href="PrincipalProfesor.html">Inicio</a></li>
+        <li><a href="Solicitudes.html">Solicitudes</a></li>
+        <li><a href="Grupos.html">Grupos</a></li>
+        <li><a href="Chat.html">Chat</a></li>
+        <li><a href="PublicarOferta.html">Publicar oferta</a></li>
+        <li><a href="../index.html" class="nav-login">Cerrar sesión</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="editar-perfil">
+      <h2>Editar mi perfil</h2>
+
+      <form action="#" method="post" class="form-card">
+
+        <div class="campo">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" value="Ana Giménez" required>
+        </div>
+
+        <div class="campo">
+          <label for="materia">Materia</label>
+          <input type="text" id="materia" name="materia" value="Matemática" required>
+        </div>
+
+        <div class="campo">
+          <label for="nivel">Nivel educativo</label>
+          <select id="nivel" name="nivel" required>
+            <option value="">Seleccioná un nivel</option>
+            <option value="primario">Primario</option>
+            <option value="secundario" selected>Secundario</option>
+            <option value="universitario">Universitario</option>
+            <option value="adultos">Adultos</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="descripcion">Sobre mí</label>
+          <textarea id="descripcion" name="descripcion" placeholder="Contales a los alumnos sobre tu experiencia y metodología">Profesora de Matemática con 8 años de experiencia preparando alumnos de secundario y primer año de facultad.</textarea>
+        </div>
+
+        <div class="campo">
+          <label for="precio">Precio por hora</label>
+          <input type="number" id="precio" name="precio" value="4500" required>
+        </div>
+
+        <fieldset class="campo-modalidad">
+          <legend>Modalidad</legend>
+          <div class="modalidad-opciones">
+
+            <div class="cntr">
+              <input type="checkbox" id="modalidad-virtual" name="modalidad" value="virtual" class="cbx-input" checked>
+              <label for="modalidad-virtual" class="cbx"></label>
+              <label for="modalidad-virtual" class="lbl">Virtual</label>
+            </div>
+
+            <div class="cntr">
+              <input type="checkbox" id="modalidad-presencial" name="modalidad" value="presencial" class="cbx-input" checked>
+              <label for="modalidad-presencial" class="cbx"></label>
+              <label for="modalidad-presencial" class="lbl">Presencial</label>
+            </div>
+
+          </div>
+        </fieldset>
+
+        <div class="campo">
+          <label for="ubicacion">Ubicación</label>
+          <input type="text" id="ubicacion" name="ubicacion" value="San Miguel de Tucumán">
+        </div>
+
+        <div class="campo">
+          <label for="horarios">Horarios disponibles</label>
+          <input type="text" id="horarios" name="horarios" value="Lunes a viernes de 16 a 20hs">
+        </div>
+
+        <div class="form-acciones">
+          <button type="submit" class="btn-guardar">Guardar cambios</button>
+          <a href="PrincipalProfesor.html" class="btn-cancelar">Cancelar</a>
+        </div>
+
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 MiProfe. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
