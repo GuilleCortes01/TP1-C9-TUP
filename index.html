@@ -45,60 +45,204 @@
   </nav>
   </header>
     <main class="Principal-inicio">
-    <section id="hero">
-      <h2>Encontrá el profesor particular ideal para vos</h2>
-      <p>Clases virtuales, presenciales o ambas. Buscá, chateá y coordiná tus clases en un solo lugar.</p>
-      <a href="Register.html?rol=alumno">Soy alumno</a>
-      <a href="Register.html?rol=profesor">Soy profesor</a>
+    <div class="inicio-contenido">
+
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <span class="badge">★ Clases particulares, sin vueltas</span>
+
+        <h1>Encontrá al profesor <span class="highlight">particular</span> perfecto para vos.</h1>
+
+        <p class="hero-subtitle">Buscá por materia, nivel y zona, chateá con quien más te convenza y coordiná tus clases — todo desde un solo lugar.</p>
+
+        <form class="hero-search" action="Register.html" method="get">
+          <label for="hero-search-materia" class="sr-only">Qué querés aprender</label>
+          <div class="hero-search-field">
+            <svg class="hero-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="hero-search-materia" name="materia" placeholder="¿Qué querés aprender? Matemática, Inglés, Programación...">
+          </div>
+
+          <label for="hero-search-zona" class="sr-only">Zona</label>
+          <div class="hero-search-field hero-search-field--zona">
+            <svg class="hero-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+            <input type="text" id="hero-search-zona" name="zona" placeholder="Zona">
+          </div>
+
+          <button type="submit">Buscar</button>
+        </form>
+
+        <p class="hero-popular"><strong>Populares:</strong> Matemática · Inglés · Física · Programación · Química</p>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-visual-bg"></div>
+
+        <div class="profile-card">
+          <div class="profile-card-top">
+            <span class="avatar">VR</span>
+            <div class="profile-card-info">
+              <strong>Valentina R.</strong>
+              <p>Matemática · Física</p>
+            </div>
+            <span class="rating">★ 4.9</span>
+          </div>
+
+          <div class="profile-card-tags">
+            <span>Virtual</span>
+            <span>Nivel secundario</span>
+          </div>
+
+          <div class="profile-card-bottom">
+            <p class="price">$4.500 <span>/hora</span></p>
+            <a href="Register.html">Ver perfil</a>
+          </div>
+        </div>
+
+        <div class="hero-visual-badge">
+          <img src="./img/Logo_Principal.png" alt="">
+        </div>
+      </div>
     </section>
-   <section id="como-funciona">
-      <h2>Cómo funciona</h2>
+
+    <section id="beneficios" class="beneficios">
+      <article>
+        <span class="beneficio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l2.5 2.5L16 9.5"></path></svg>
+        </span>
+        <h3>Perfiles verificados</h3>
+        <p>Identidad y formación confirmadas.</p>
+      </article>
 
       <article>
-        <h3>Para alumnos</h3>
-        <ol>
-          <li>Buscá profesores por materia, zona y horario</li>
-          <li>Chateá y coordiná el horario de tu clase</li>
-          <li>Tomá tu clase virtual o presencial</li>
-        </ol>
+        <span class="beneficio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"></rect><line x1="3" y1="10.5" x2="21" y2="10.5"></line></svg>
+        </span>
+        <h3>Sin comisiones ocultas</h3>
+        <p>Vos acordás el precio con tu profe.</p>
       </article>
 
       <article>
-        <h3>Para profesores</h3>
-        <ol>
-          <li>Creá tu perfil y publicá tu oferta de clases</li>
-          <li>Recibí y gestioná solicitudes de alumnos</li>
-          <li>Dictá tus clases y sumá reseñas</li>
-        </ol>
-      </article>
-    </section>
-    <section id="beneficios">
-      <h2>Por qué elegir MiProfe</h2>
-      <article>
-        <h3>Cerca tuyo</h3>
-        <p>Encontrá profesores en tu zona o que dicten clases virtuales.</p>
-      </article>
-      <article>
-        <h3>Comunicación directa</h3>
-        <p>Chat integrado para coordinar todo sin salir de la plataforma.</p>
-      </article>
-      <article>
-        <h3>Grupos de estudio</h3>
-        <p>Sumate a grupos con otros alumnos y tu profesor.</p>
+        <span class="beneficio-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H8l-4 4V5z"></path></svg>
+        </span>
+        <h3>Chat integrado</h3>
+        <p>Coordiná todo sin salir de MiProfe.</p>
       </article>
     </section>
 
+    <section id="como-funciona" class="como-funciona">
+      <span class="badge badge--center">Cómo funciona</span>
+      <h2>De la búsqueda a tu primera clase, en tres pasos</h2>
+
+      <div class="pasos">
+        <article>
+          <span class="paso-num">01</span>
+          <h3>Buscá y comparná</h3>
+          <p>Filtrá profesores por materia, precio, modalidad y horario hasta encontrar el que mejor encaje con vos.</p>
+        </article>
+
+        <article>
+          <span class="paso-num">02</span>
+          <h3>Enviá tu solicitud</h3>
+          <p>Contale al profesor qué necesitás. Cuando la acepta, ya podés coordinar el primer encuentro por chat.</p>
+        </article>
+
+        <article>
+          <span class="paso-num">03</span>
+          <h3>Aprendé a tu ritmo</h3>
+          <p>Llevá tus clases, tus grupos de estudio y tu progreso desde un panel pensado para vos.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="materias" class="materias">
+      <h2>Elegí por materia</h2>
+
+      <div class="materias-grid">
+        <a href="Register.html">∑ Matemática</a>
+        <a href="Register.html">EN Inglés</a>
+        <a href="Register.html">⚛ Física</a>
+        <a href="Register.html">&lt;/&gt; Programación</a>
+        <a href="Register.html">⚗ Química</a>
+        <a href="Register.html">✎ Lengua</a>
+        <a href="Register.html">📜 Historia</a>
+        <a href="Register.html" class="materias-ver-todas">+ Ver todas</a>
+      </div>
+    </section>
+
+    <section id="destacados" class="destacados">
+      <div class="destacados-header">
+        <h2>Profesores destacados esta semana</h2>
+        <a href="Register.html">Ver todos →</a>
+      </div>
+
+      <div class="destacados-grid">
+        <article class="profe-card">
+          <div class="profile-card-top">
+            <span class="avatar">TM</span>
+            <div class="profile-card-info">
+              <strong>Tomás M.</strong>
+              <p>Programación · Álgebra</p>
+            </div>
+          </div>
+          <p class="profe-quote">"Enseño con proyectos reales, para que lo que aprendas te sirva desde el primer día."</p>
+          <div class="profile-card-bottom">
+            <p class="price">$5.200 <span>/hora</span></p>
+            <span class="rating">★ 5.0</span>
+          </div>
+        </article>
+
+        <article class="profe-card">
+          <div class="profile-card-top">
+            <span class="avatar">CL</span>
+            <div class="profile-card-info">
+              <strong>Camila L.</strong>
+              <p>Inglés · Preparación de exámenes</p>
+            </div>
+          </div>
+          <p class="profe-quote">"Clases dinámicas y en inglés desde el minuto uno. Ideal si tenés un viaje o examen cerca."</p>
+          <div class="profile-card-bottom">
+            <p class="price">$4.000 <span>/hora</span></p>
+            <span class="rating">★ 4.8</span>
+          </div>
+        </article>
+
+        <article class="profe-card">
+          <div class="profile-card-top">
+            <span class="avatar">FS</span>
+            <div class="profile-card-info">
+              <strong>Franco S.</strong>
+              <p>Física · Química</p>
+            </div>
+          </div>
+          <p class="profe-quote">"Profesor de secundaria hace 8 años. Te ayudo a entender, no solo a memorizar."</p>
+          <div class="profile-card-bottom">
+            <p class="price">$3.800 <span>/hora</span></p>
+            <span class="rating">★ 4.9</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="cta" class="cta">
+      <article class="cta-box cta-box--alumno">
+        <h3>¿Querés aprender?</h3>
+        <p>Explorá cientos de profesores particulares y empezá hoy mismo.</p>
+        <a href="Register.html?rol=alumno">Buscar profesor</a>
+      </article>
+
+      <article class="cta-box cta-box--profesor">
+        <h3>¿Querés dar clases?</h3>
+        <p>Publicá tu oferta, elegí tus horarios y empezá a generar ingresos enseñando.</p>
+        <a href="Register.html?rol=profesor">Ser profesor</a>
+      </article>
+    </section>
+
+    </div>
   </main>
 
   <footer>
     <p>&copy; 2026 MiProfe. Todos los derechos reservados.</p>
-    <nav class="footer-nav">
-      <ul>
-        <li><a href="#">Contacto</a></li>
-        <li><a href="#">Sobre nosotros</a></li>
-        <li><a href="#">Redes sociales</a></li>
-      </ul>
-    </nav>
   </footer>
 </body>
 </html>
