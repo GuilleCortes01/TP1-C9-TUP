@@ -15,7 +15,7 @@
 <body>
     <header>
       <nav class="navbar">
-         <a href="PrincipalProfesor.html" class="logo">
+         <a href="principalAlumno.html" class="logo">
          <img src="../img/Logo_Principal.png" alt="">
             MiProfe
           </a>
@@ -37,17 +37,23 @@
     </nav>
   </header>
 
-  <main>
+  <main class="Principal-inicio">
+    <div class="inicio-contenido">
 
-    <section id="datos-profesor">
-      <h2>Lucía Molina</h2>
-      <p>Materia: Matemática</p>
-      <p>Bio: Profesora de Matemática con 5 años de experiencia dando clases a estudiantes de secundaria y universidad.</p>
-      <p>Precio: $4.500/hora</p>
-      <p>Modalidad: Virtual</p>
+    <section id="datos-profesor" class="perfil-card">
+      <span class="avatar avatar--grande" aria-hidden="true">LM</span>
+      <div class="perfil-info">
+        <h2>Lucía Molina</h2>
+        <span class="materia-tag">Matemática</span>
+        <p>Bio: Profesora de Matemática con 5 años de experiencia dando clases a estudiantes de secundaria y universidad.</p>
+        <ul class="perfil-datos">
+          <li><strong>Precio:</strong> $4.500/hora</li>
+          <li><strong>Modalidad:</strong> Virtual</li>
+        </ul>
+      </div>
     </section>
 
-    <section id="horarios">
+    <section id="horarios" class="horarios-card">
       <h3>Horarios disponibles</h3>
       <ul>
         <li>Lunes 16 a 19hs</li>
@@ -58,23 +64,24 @@
 
     <section id="resenas">
       <h3>Reseñas</h3>
-      <article>
-        <p>Calificación: 5 estrellas</p>
+      <article class="resena-card">
+        <p class="resena-calificacion">Calificación: 5 estrellas</p>
         <p>"Excelente profesora, explica muy claro." - Martina T.</p>
       </article>
-      <article>
-        <p>Calificación: 4 estrellas</p>
+      <article class="resena-card">
+        <p class="resena-calificacion">Calificación: 4 estrellas</p>
         <p>"Muy puntual y organizada." - Bruno F.</p>
       </article>
     </section>
 
     <section id="acciones">
       <form action="#" method="post">
-        <button type="submit">Solicitar clase</button>
+        <button type="submit" class="btn-guardar">Solicitar clase</button>
       </form>
-      <a href="chatGrupo.html">Enviar mensaje</a>
+      <a href="chatGrupo.html" class="btn-cancelar">Enviar mensaje</a>
     </section>
 
+    </div>
   </main>
 
   <footer>

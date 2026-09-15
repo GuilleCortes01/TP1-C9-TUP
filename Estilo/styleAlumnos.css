@@ -1,536 +1,552 @@
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
+/* =========================
+   Estilos propios de la seccion alumno.
+   Reutiliza las variables y componentes definidos en Estilo/style.css
+   (colores, sombras, tipografias, .Principal-inicio/.inicio-contenido)
+========================= */
+
+/* =========================
+   TITULOS DE SECCION
+========================= */
+
+.section-title {
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  color: var(--font-color);
 }
 
-/*Header*/
+/* =========================
+   INICIO ALUMNO - BUSCAR PROFESORES
+========================= */
 
+.inicio-contenido.main-content {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
 
-    body {
+#filtros {
+  flex: 1 1 280px;
+
+  padding: 1.5rem;
+ 
+  background-color: #c9e4f5;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: none;
+  border-radius: 50px;
+}
+
+#filtros h2 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.form-busqueda {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-
-  background-color: #ffffff;
-  background-image:
-    radial-gradient(650px circle at 12% -8%, rgba(45, 140, 240, 0.32), transparent 60%),
-    radial-gradient(550px circle at 100% 0%, rgba(139, 92, 246, 0.26), transparent 55%),
-    radial-gradient(500px circle at 50% 100%, rgba(255, 138, 61, 0.18), transparent 55%);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  align-items: stretch;
+  border-radius: 50px;
+  padding: 25px;
 }
 
+.form-busqueda label {
+  margin-top: 0.9rem;
+  margin-bottom: 0.4rem;
 
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-primary-dark);
+}
 
-header {
+.form-busqueda label:first-of-type {
+  margin-top: 0;
+}
+
+.form-busqueda select,
+.form-busqueda .input-buscar {
   width: 100%;
+  height: 42px;
+  padding: 0 0.75rem;
+
+  
+  border-radius: var(--border-radius);
+  border-radius: 50px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--font-color);
+
+  outline: none;
+  transition: 0.15s ease;
+}
+
+.form-busqueda select {
+  cursor: pointer;
+}
+
+.form-busqueda select:focus,
+.form-busqueda .input-buscar:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(45, 140, 240, 0.18);
+}
+
+.boton-buscar {
+  align-self: center;
+  margin: 1.25rem auto 0 auto;
+
+  padding: 0.6rem 1.6rem;
+
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+
+  background-color: var(--color-primary);
+  box-shadow: var(--shadow);
+
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #ffffff;
+
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.boton-buscar:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px var(--border-color);
+}
+
+#cercanos,
+#recomendados {
+  flex: 1 1 240px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#cercanos h2,
+#recomendados h2 {
+  font-size: 1.2rem;
+}
+
+#cercanos article,
+#recomendados article {
+  padding: 1.1rem;
+
+  background-color: #c9e4f5;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  border-radius: 35px;
+  transition: 0.15s ease;
+}
+
+#cercanos article:hover,
+#recomendados article:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px var(--border-color);
+}
+
+#cercanos article h3,
+#recomendados article h3 {
+  margin-bottom: 0.4rem;
+}
+
+#cercanos article p,
+#recomendados article p {
+  margin-bottom: 0.2rem;
+  font-size: 0.88rem;
+  color: var(--font-color-sub);
+}
+
+#cercanos article a,
+#recomendados article a {
+  display: inline-block;
+  margin-top: 0.7rem;
+  padding: 0.4rem 0.8rem;
+
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+
+  background-color: var(--color-primary);
+  box-shadow: var(--shadow);
+
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--font-color);
+  text-decoration: none;
+
+  transition: 0.15s ease;
+}
+
+#cercanos article a:hover,
+#recomendados article a:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px var(--border-color);
+}
+
+/* =========================
+   MIS PROFESORES
+========================= */
+
+.profesores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.profesor-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 1.5rem;
+
+  background-color: #ffffff;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+
+  transition: 0.15s ease;
+}
+
+.profesor-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px var(--border-color);
+}
+
+.profesor-info h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.profesor-info p {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+  color: var(--font-color-sub);
+}
+
+.profesor-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  flex: 1;
+
+  padding: 0.6rem 1rem;
+
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px var(--border-color);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  box-shadow: var(--shadow);
+  color: #ffffff;
+}
+
+.btn-outline {
+  background-color: #ffffff;
+  color: var(--font-color);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+/* =========================
+   GRUPOS
+========================= */
+
+.grupos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.grupo-card {
+  display: flex;
+  flex-direction: column;
+
+  padding: 1.5rem;
+
+  background-color: #ffffff;
+  border: 2px solid var(--border-color);
+  border-top: 2px solid var(--color-primary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+
+  transition: 0.15s ease;
+}
+
+.grupo-card:nth-child(2) {
+  border-top-color: var(--accent-violeta);
+}
+
+.grupo-card:nth-child(3) {
+  border-top-color: var(--accent-verde);
+}
+
+.grupo-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px var(--border-color);
+}
+
+.grupo-header h3 {
+  font-size: 1.2rem;
+}
+
+.profesor-name {
+  margin: 0.4rem 0 1rem 0;
+  font-size: 0.9rem;
+  color: var(--font-color-sub);
+}
+
+.grupo-body {
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+}
+
+.badge-integrantes {
+  display: inline-block;
+
+  padding: 0.3rem 0.8rem;
+
+  border: 2px solid var(--border-color);
+  border-radius: 20px;
+
+  background-color: var(--color-secondary);
+
+  font-size: 0.82rem;
+  color: var(--font-color);
+}
+
+/* =========================
+   CHAT (individual / grupal)
+========================= */
+
+.inicio-contenido.chat-layout {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.5rem;
+
+  min-height: 60vh;
+}
+
+.chat-sidebar {
+  flex: 0 0 260px;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: #ffffff;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+
+  overflow: hidden;
+}
+
+.sidebar-title {
+  padding: 1.1rem 1.25rem;
+
+  font-size: 1.1rem;
+  border-bottom: 2px solid var(--border-color);
+  background-color: var(--navbar-bg);
+}
+
+.contact-list {
+  list-style: none;
+}
+
+.contact-item a {
+  display: block;
+  padding: 0.9rem 1.25rem;
+
+  color: var(--font-color);
+  text-decoration: none;
+  font-weight: 600;
+
+  border-bottom: 1px solid #eee;
+  transition: 0.15s ease;
+}
+
+.contact-item:hover a {
+  background-color: var(--navbar-bg);
+}
+
+.contact-item.active a {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.contact-item.active .contact-info p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.contact-info h4 {
+  margin-bottom: 0.2rem;
+  font-size: 0.95rem;
+}
+
+.contact-info p {
+  font-size: 0.8rem;
+  color: var(--font-color-sub);
+}
+
+.chat-window {
+  flex: 1;
+  min-width: 280px;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: #ffffff;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+
+  overflow: hidden;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1rem 1.25rem;
+
   background-color: var(--navbar-bg);
   border-bottom: 2px solid var(--border-color);
 }
 
-.navbar {
-  position: relative;
-  flex-wrap: wrap;
-
-  width: 100%;
-  min-height: 10vh;
-
-  padding: 1rem 5vw;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  background-color: var(--navbar-bg);
-}
-
-/*main*/
-
-.main-content {
-  display: flex;
-  justify-content: space-between;
-  padding: 2rem 5vw;
-  gap: 2rem;
-  height: 75vh;
-}
-
-
-#filtros {
-    background: linear-gradient(135deg, #4f6fad, #7c8697);
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem;
-    width: 40%;
-
-    border: 1px solid #222;
-    border-radius: 4px;
-    box-shadow: 3px 3px 0px #222;
-}
-
-#filtros h2 {
-    margin-bottom: 1rem;
-}
-
-/* form */
-
-form {
-    width: 100%;
-    padding: 0;
-    background-color: transparent;
-    box-sizing: border-box;
-
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-}
-
-/* Labels */
-.form-busqueda label {
-    margin-top: 14px;
-    margin-bottom: 8px;
-    text-align: left;
-    font-weight: 600;
-}
-
-.form-busqueda label:first-of-type {
-    margin-top: 0;
-}
-
-/* Select e inputs */
-.form-busqueda select,
-.form-busqueda input {
-    width: 100%;
-    height: 36px;
-    padding: 0 8px;
-    box-sizing: border-box;
-    border: 1px solid #222;
-    border-radius: 4px;
-}
-
-/*boton buscar profesor*/
-
-.boton-buscar {
-  background-color: white;
-  color: black;
-  border-radius: 10em;
-  font-size: 17px;
-  font-weight: 600;
-  padding: 1em 2em;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  border: 1px solid black;
-  box-shadow: 0 0 0 0 black;
-  margin: 20px auto 0 auto;
-  align-self: center;
-}
-
-.boton-buscar:hover {
-  transform: translateY(-4px) translateX(-2px);
-  box-shadow: 2px 5px 0 0 black;
-}
-
-.boton-buscar:active {
-  transform: translateY(2px) translateX(1px);
-  box-shadow: 0 0 0 0 black;
-}
-
-/*principal profesores cercanos*/
-
-#cercanos, #recomendados {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 28%;
-    
-}
-
-#cercanos article, #recomendados article {
-    background: linear-gradient(135deg, #4f6fad, #7c8697);
-    padding: 1rem;
-    border: 1px solid #222;
-    border-radius: 4px;
-    box-shadow: 3px 3px 0px #222;
-}
-
-#cercanos article h3, #recomendados article h3 {
-    margin-bottom: 0.4rem;
-}
-
-#cercanos article p, #recomendados article p {
-    margin-bottom: 0.2rem;
-    font-size: 0.9rem;
-}
-
-#cercanos article a, #recomendados article a {
-    display: inline-block;
-    margin-top: 0.5rem;
-    font-weight: 600;
-}
-
-
-
-
-/*Parte mis profesores*/
-
-/* --- Estilos para el Main --- */
-
-.MisProfes-cuerpo {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* 100vh = 100% de la altura de la ventana (viewport) */
-    margin: 0;
-}
-.main-container {
-    max-width: 1000px; /* Limita el ancho para que no se estire infinito en monitores grandes */
-    margin: 40px auto;
-    padding: 0 20px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    flex: 1; 
-}
-
-.section-title {
-    font-size: 2rem;
-    color: #1a1a1a;
-    margin-bottom: 30px;
-}
-
-/* Grid para las tarjetas */
-.profesores-grid {
-    display: grid;
-    /* Esto crea columnas automáticas que no bajan de 300px de ancho */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-}
-
-/* Estilos individuales de la Tarjeta */
-.profesor-card {
-    background: linear-gradient(to bottom, rgb(164, 215, 231), white);
-    border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-/* Efecto al pasar el mouse por encima */
-.profesor-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-}
-
-.profesor-info h3 {
-    margin: 0 0 12px 0;
-    font-size: 1.3rem;
-    color: #000;
-}
-
-.profesor-info p {
-    margin: 6px 0;
-    color: #4a4a4a;
-    font-size: 0.95rem;
-}
-
-/* Contenedor de los botones */
-.profesor-actions {
-    margin-top: 24px;
-    display: flex;
-    gap: 12px;
-}
-
-/* Estilos base para ambos botones */
-.btn {
-    text-decoration: none;
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-align: center;
-    flex: 1; /* Hace que ambos botones midan lo mismo */
-    transition: all 0.2s ease;
-}
-
-/* Botón Primario (Chatear) */
-.btn-primary {
-    background-color: #a3d5eb; /* Color celeste similar a tu barra superior */
-    color: #000;
-    border: 2px solid #a3d5eb;
-}
-
-.btn-primary:hover {
-    background-color: #8ac6df;
-    border-color: #8ac6df;
-}
-
-/* Botón Secundario (Ver perfil) */
-.btn-outline {
-    background-color: transparent;
-    color: #333;
-    border: 2px solid #e0e0e0;
-}
-
-.btn-outline:hover {
-    border-color: #a3d5eb;
-    color: #000;
-}
-
-
-/*parte grupos*/
-
-/* --- Reutilización del contenedor principal --- */
-.main-container {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px;
-    flex: 1; /* Esto asume que aplicaste el Flexbox al body para bajar el footer */
-}
-
-.section-title {
-    font-size: 2rem;
-    color: #1a1a1a;
-    margin-bottom: 30px;
-}
-
-/* Grid para los grupos */
-.grupos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 24px;
-}
-
-/* Diseño de la tarjeta de grupo */
-.grupo-card {
-    background: linear-gradient(to bottom, lightblue, white);
-    border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    display: flex;
-    flex-direction: column;
-    border-top: 4px solid #a3d5eb; /* Detalle de color en la parte superior */
-}
-
-.grupo-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Cabecera de la tarjeta */
-.grupo-header h3 {
-    margin: 0;
-    font-size: 1.4rem;
-    color: #1a1a1a;
-}
-
-.profesor-name {
-    margin: 8px 0 16px 0;
-    color: #666;
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
-/* Estilo para la cantidad de integrantes */
-.grupo-body {
-    margin-bottom: 24px;
-    flex-grow: 1;
-}
-
-.badge-integrantes {
-    display: inline-block;
-    background-color: #f0f7fa;
-    color: #333;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    border: 1px solid #d1e8f3;
-}
-
-/* Botón adaptado para ocupar todo el ancho */
-.btn-block {
-    display: block;
-    width: 100%;
-    box-sizing: border-box; /* Para que el padding no desborde la tarjeta */
-}
-
-
-/*parte chat grupos o individuales*/
-
-
-/* --- Layout principal del Chat --- */
-.chat-layout {
-    display: flex;
-    gap: 20px;
-    height: 75vh; /* Le da una altura fija al chat basada en la pantalla */
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-/* --- Panel Lateral (Conversaciones) --- */
-.chat-sidebar {
-    width: 30%;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-.sidebar-title {
-    padding: 20px;
-    margin: 0;
-    font-size: 1.2rem;
-    border-bottom: 1px solid #eee;
-    background-color: #f8f9fa;
-}
-
-.contact-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    overflow-y: auto;
-}
-
-.contact-item a {
-    display: block;
-    padding: 15px 20px;
-    text-decoration: none;
-    color: inherit;
-    border-bottom: 1px solid #f0f0f0;
-    transition: background 0.2s;
-}
-
-.contact-item:hover a {
-    background-color: #f0f7fa;
-}
-
-.contact-item.active a {
-    background-color: #e6f3f8;
-    border-left: 4px solid #a3d5eb; /* Marca visual del chat actual */
-}
-
-.contact-info h4 {
-    margin: 0 0 5px 0;
-    font-size: 1rem;
-    color: #333;
-}
-
-.contact-info p {
-    margin: 0;
-    font-size: 0.85rem;
-    color: #777;
-}
-
-/* --- Ventana de Chat --- */
-.chat-window {
-    width: 70%;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-.chat-header {
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .chat-header h2 {
-    margin: 0;
-    font-size: 1.3rem;
+  font-size: 1.15rem;
 }
 
-.chat-header .status {
-    font-size: 0.85rem;
-    color: #28a745;
-    font-weight: 600;
+.status {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent-verde);
 }
 
-/* Área de mensajes (scrollable) */
 .chat-messages {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    background-color: #f4f7f6; /* Fondo un poco más gris para resaltar las burbujas */
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  padding: 1.25rem;
+
+  min-height: 220px;
+  overflow-y: auto;
 }
 
-/* Burbujas de mensaje */
 .message {
-    max-width: 70%;
-    padding: 12px 16px;
-    border-radius: 15px;
-    position: relative;
+  max-width: 70%;
+
+  padding: 0.6rem 0.9rem;
+
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+
+  font-size: 0.9rem;
 }
 
 .message p {
-    margin: 0 0 5px 0;
-    line-height: 1.4;
+  margin-bottom: 0.3rem;
 }
 
 .message .time {
-    font-size: 0.7rem;
-    color: rgba(0,0,0,0.5);
-    float: right;
+  font-size: 0.7rem;
+  opacity: 0.7;
 }
 
-/* Mensajes recibidos (Izquierda) */
 .received {
-    align-self: flex-start;
-    background-color: #ffffff;
-    border-bottom-left-radius: 4px;
-    border: 1px solid #e0e0e0;
+  align-self: flex-start;
+  background-color: #ffffff;
 }
 
-/* Mensajes enviados (Derecha) */
 .sent {
-    align-self: flex-end;
-    background-color: #a3d5eb; /* Tu color de marca */
-    color: #000;
-    border-bottom-right-radius: 4px;
+  align-self: flex-end;
+
+  background-color: var(--color-primary);
+  border-color: var(--color-primary-dark);
+  color: #ffffff;
 }
 
-/* --- Input Area --- */
 .chat-input-area {
-    display: flex;
-    padding: 15px 20px;
-    background-color: #ffffff;
-    border-top: 1px solid #eee;
-    gap: 10px;
-}
+  display: flex;
+  gap: 0.75rem;
 
-.visually-hidden {
-    display: none; /* Ocultamos el label visualmente pero lo mantenemos en el HTML */
+  padding: 1rem 1.25rem;
+
+  border-top: 2px solid var(--border-color);
 }
 
 .chat-input-area input {
-    flex: 1;
-    padding: 12px 15px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    outline: none;
-    font-family: inherit;
+  flex: 1;
+  min-width: 0;
+
+  padding: 0.65rem 1rem;
+
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--font-color);
+
+  outline: none;
+  transition: 0.15s ease;
 }
 
 .chat-input-area input:focus {
-    border-color: #a3d5eb;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(45, 140, 240, 0.18);
 }
 
-.chat-input-area button {
-    border-radius: 20px;
-    padding: 10px 25px;
-    cursor: pointer;
+.chat-input-area .btn {
+  flex: 0 0 auto;
 }
 
+/* =========================
+   RESPONSIVE
+========================= */
 
+@media (max-width: 860px) {
+  .inicio-contenido.chat-layout {
+    flex-direction: column;
+  }
 
+  .chat-sidebar {
+    flex: none;
+    width: 100%;
+  }
+}

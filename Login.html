@@ -34,14 +34,6 @@
       </li>
 
       <li>
-        <a href="About.html">Sobre nosotros</a>
-      </li>
-
-      <li>
-        <a href="Contact.html">Contacto</a>
-      </li>
-
-      <li>
         <a href="Login.html" class="nav-login">
           Iniciar sesión
         </a>
@@ -57,15 +49,34 @@
   </nav>
 </header>
 
-  <main class="login-main">
-    <section id="login">
-      <h2>Iniciar sesión</h2>
+  <main class="Principal-Registro">
+    <div class="auth-layout">
 
-     <!-- From Uiverse.io by ayyjayy2 --> 
-        <form class="form">
-          <div class="title">Welcome,<br><span>sign up to continue</span></div>
-          <input class="input" name="email" placeholder="Email" type="email">
-          <input class="input" name="password" placeholder="Password" type="password">
+      <div class="auth-visual">
+        <div class="auth-visual-content">
+          <a href="index.html" class="auth-visual-logo">
+            <img src="./img/Logo_Principal.png" alt="">
+            MiProfe
+          </a>
+
+          <blockquote class="auth-visual-quote">
+            Encontrá el profesor particular ideal para vos
+            <span>Clases virtuales, presenciales o ambas. Buscá, chateá y coordiná todo en un solo lugar.</span>
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="auth-panel">
+        <!-- Mismo estilo que Register.html -->
+        <form class="form form--register form--login" action="#" method="post">
+          <div class="title">Bienvenido de nuevo,<br><span>iniciá sesión para continuar</span></div>
+
+          <label for="email" class="sr-only">Email</label>
+          <input class="input" name="email" id="email" placeholder="Email" type="email">
+
+          <label for="password" class="sr-only">Password</label>
+          <input class="input" name="password" id="password" placeholder="Password" type="password">
+
           <div class="login-with">
             <div class="button-log"><b>t</b></div>
             <div class="button-log">
@@ -75,10 +86,14 @@
               <svg class="icon" height="56.693px" id="Layer_1" version="1.1" viewBox="0 0 56.693 56.693" width="56.693px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z"></path></svg>
             </div>
           </div>
-          <button class="button-confirm">Iniciar Sesión</button>
+
+          <button type="submit" class="button-confirm">Iniciar Sesión</button>
         </form>
-          <p>¿No tenés cuenta? <a href="Register.html">Registrate acá</a></p>
-    </section>
+        <p class="auth-switch">¿No tenés cuenta? <a href="Register.html">Registrate acá</a></p>
+        <p class="auth-switch">Acceso directo: <a href="alumno/principalAlumno.html">Alumno</a> · <a href="profesor/PrincipalProfesor.html">Profesor</a></p>
+      </div>
+
+    </div>
   </main>
 
   <footer>
