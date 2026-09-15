@@ -1020,7 +1020,7 @@ footer {
   background-color: #ffffff;
   border: 2px solid var(--border-color);
   border-radius: var(--border-radius);
-  box-shadow: 8px 8px var(--border-color);
+  box-shadow: none;
 }
 
 .inicio-contenido > section {

@@ -40,8 +40,8 @@
   height: 8px;
 
   border-radius: var(--border-radius) var(--border-radius) 0 0;
-
-  background: linear-gradient(90deg, var(--color-primary), var(--accent-violeta), var(--accent-naranja));
+  background: lightblue;
+   
 }
 
 .avatar--grande {
@@ -202,7 +202,7 @@
 
   background: #ffffff;
   border: 2px solid var(--border-color);
-  border-top: 6px solid var(--color-primary);
+  border-top: 6px solid lightblue;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
 
@@ -228,11 +228,11 @@
 }
 
 .stat-card--violeta {
-  border-top-color: var(--accent-violeta);
+  border-top-color: lightblue;
 }
 
 .stat-card--verde {
-  border-top-color: var(--accent-verde);
+  border-top-color: lightblue;
 }
 
 .stat-card--verde .stat-numero {
@@ -240,11 +240,11 @@
 }
 
 .stat-card--naranja {
-  border-top-color: var(--accent-naranja);
+  border-top-color: lightblue;
 }
 
 .stat-card--naranja .stat-numero {
-  color: var(--accent-naranja);
+  color: rgb(32, 32, 192)
 }
 
 .stat-link {
