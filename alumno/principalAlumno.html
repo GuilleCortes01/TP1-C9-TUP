@@ -42,7 +42,19 @@
   </header>
 
   <main class="Principal-inicio">
-    <div class="inicio-contenido"> 
+    <div class="inicio-contenido">
+
+    <section id="perfil" class="card">
+      <div class="card-body d-flex flex-column flex-sm-row align-items-sm-center gap-3">
+        <div class="avatar avatar--grande flex-shrink-0" aria-hidden="true">JP</div>
+        <div>
+          <h2 class="card-title mb-1">Juan Pérez</h2>
+          <p class="card-text mb-2">Secundario · San Miguel de Tucumán</p>
+          <a href="EditarPerfil.html" class="btn btn-sm btn-secondary">Editar perfil</a>
+        </div>
+      </div>
+    </section>
+
     <div class="row g-3">
   <div class="col-lg-4">
     <section id="filtros">
@@ -86,24 +98,37 @@
     <section id="cercanos">
       <h2>Profesores cercanos</h2>
       <div class="d-flex flex-column gap-3">
-        <article class="card">
-          <div class="card-body">
-            <h3 class="card-title">Lucía Molina</h3>
-            <p class="card-text mb-1">Materia: Matemática</p>
+        <article class="card profesor-card">
+          <div class="card-header profesor-card-banner"></div>
+          <div class="card-body d-flex flex-column align-items-center">
+            <div class="avatar avatar--grande profesor-card-avatar" aria-hidden="true">LM</div>
+            <h3 class="card-title mb-1">Lucía Molina</h3>
+            <span class="badge text-bg-primary rounded-pill mb-2">Matemática</span>
             <p class="card-text mb-1">Modalidad: Virtual</p>
-            <p class="card-text mb-1">Precio: $4.500/hora</p>
-            <p class="card-text">Horarios: Lunes a viernes, tarde</p>
-            <a href="perfilProfesor.html" class="btn btn-sm btn-secondary">Ver perfil</a>
+            <p class="card-text mb-3">Precio: $4.500/hora</p>
+            <a href="perfilProfesor.html" class="btn btn-outline-secondary btn-sm rounded-pill">Ver perfil</a>
           </div>
         </article>
-        <article class="card">
-          <div class="card-body">
-            <h3 class="card-title">Diego Ruiz</h3>
-            <p class="card-text mb-1">Materia: Inglés</p>
+        <article class="card profesor-card">
+          <div class="card-header profesor-card-banner"></div>
+          <div class="card-body d-flex flex-column align-items-center">
+            <div class="avatar avatar--grande profesor-card-avatar" aria-hidden="true">DR</div>
+            <h3 class="card-title mb-1">Diego Ruiz</h3>
+            <span class="badge text-bg-primary rounded-pill mb-2">Inglés</span>
             <p class="card-text mb-1">Modalidad: Presencial</p>
-            <p class="card-text mb-1">Precio: $5.000/hora</p>
-            <p class="card-text">Horarios: Sábados, mañana</p>
-            <a href="perfilProfesor.html" class="btn btn-sm btn-secondary">Ver perfil</a>
+            <p class="card-text mb-3">Precio: $5.000/hora</p>
+            <a href="perfilProfesor.html" class="btn btn-outline-secondary btn-sm rounded-pill">Ver perfil</a>
+          </div>
+        </article>
+        <article class="card profesor-card">
+          <div class="card-header profesor-card-banner"></div>
+          <div class="card-body d-flex flex-column align-items-center">
+            <div class="avatar avatar--grande profesor-card-avatar" aria-hidden="true">CS</div>
+            <h3 class="card-title mb-1">Camila Suárez</h3>
+            <span class="badge text-bg-primary rounded-pill mb-2">Programación</span>
+            <p class="card-text mb-1">Modalidad: Virtual</p>
+            <p class="card-text mb-3">Precio: $4.800/hora</p>
+            <a href="perfilProfesor.html" class="btn btn-outline-secondary btn-sm rounded-pill">Ver perfil</a>
           </div>
         </article>
       </div>
@@ -114,22 +139,37 @@
     <section id="recomendados">
       <h2>Recomendados para vos</h2>
       <div class="d-flex flex-column gap-3">
-        <article class="card">
-          <div class="card-body">
-            <h3 class="card-title">Sofía Vera</h3>
-            <p class="card-text mb-1">Materia: Física</p>
+        <article class="card profesor-card">
+          <div class="card-header profesor-card-banner"></div>
+          <div class="card-body d-flex flex-column align-items-center">
+            <div class="avatar avatar--grande profesor-card-avatar" aria-hidden="true">SV</div>
+            <h3 class="card-title mb-1">Sofía Vera</h3>
+            <span class="badge text-bg-primary rounded-pill mb-2">Física</span>
             <p class="card-text mb-1">Modalidad: Ambas</p>
-            <p class="card-text">Calificación: 4.9</p>
-            <a href="perfilProfesor.html" class="btn btn-sm btn-secondary">Ver perfil</a>
+            <p class="card-text mb-3">Calificación: 4.9</p>
+            <a href="perfilProfesor.html" class="btn btn-outline-secondary btn-sm rounded-pill">Ver perfil</a>
           </div>
         </article>
-        <article class="card">
-          <div class="card-body">
-            <h3 class="card-title">Juan Paz</h3>
-            <p class="card-text mb-1">Materia: Química</p>
+        <article class="card profesor-card">
+          <div class="card-header profesor-card-banner"></div>
+          <div class="card-body d-flex flex-column align-items-center">
+            <div class="avatar avatar--grande profesor-card-avatar" aria-hidden="true">JP</div>
+            <h3 class="card-title mb-1">Juan Paz</h3>
+            <span class="badge text-bg-primary rounded-pill mb-2">Química</span>
             <p class="card-text mb-1">Modalidad: Virtual</p>
-            <p class="card-text">Calificación: 4.8</p>
-            <a href="perfilProfesor.html" class="btn btn-sm btn-secondary">Ver perfil</a>
+            <p class="card-text mb-3">Calificación: 4.8</p>
+            <a href="perfilProfesor.html" class="btn btn-outline-secondary btn-sm rounded-pill">Ver perfil</a>
+          </div>
+        </article>
+        <article class="card profesor-card">
+          <div class="card-header profesor-card-banner"></div>
+          <div class="card-body d-flex flex-column align-items-center">
+            <div class="avatar avatar--grande profesor-card-avatar" aria-hidden="true">MI</div>
+            <h3 class="card-title mb-1">Martín Ibarra</h3>
+            <span class="badge text-bg-primary rounded-pill mb-2">Historia</span>
+            <p class="card-text mb-1">Modalidad: Presencial</p>
+            <p class="card-text mb-3">Calificación: 4.7</p>
+            <a href="perfilProfesor.html" class="btn btn-outline-secondary btn-sm rounded-pill">Ver perfil</a>
           </div>
         </article>
       </div>
