@@ -6,120 +6,141 @@
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../Estilo/style.css">
     <link rel="stylesheet" href="../Estilo/styleAlumnos.css">
     <link rel="icon" href="../img/Logo_Principal.png">
+    
      <title>Inicio - MiProfe</title>
 </head>
 <body>
      <header>
+    <nav class="navbar navbar-expand-lg mi-navbar">
+      <div class="container-fluid">
 
-    <nav class="navbar">
+        <a href="principalAlumno.html" class="navbar-brand mi-logo">
+          <img src="../img/Logo_Principal.png" alt="" width="44" height="44">
+          MiProfe
+        </a>
 
-      <a href="../index.html" class="logo">
-      <img src="../img/Logo_Principal.png" alt="">
-      MiProfe
-       </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navAlumno" aria-controls="navAlumno" aria-expanded="false" aria-label="Abrir menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <!-- Botón hamburguesa -->
-    <input type="checkbox" id="menu-toggle">
+        <div class="collapse navbar-collapse" id="navAlumno">
+          <ul class="navbar-nav ms-lg-auto align-items-lg-center gap-lg-2 mt-3 mt-lg-0">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="principalAlumno.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="MisProfesores.html">Mis profesores</a></li>
+            <li class="nav-item"><a class="nav-link" href="grupos.html">Grupos</a></li>
+            <li class="nav-item"><a class="nav-link" href="chatGrupo.html">Chat</a></li>
+            <li class="nav-item"><a class="btn mi-btn-cerrar-sesion mt-2 mt-lg-0" href="../index.html">Cerrar sesión</a></li>
+          </ul>
+        </div>
 
-    <label for="menu-toggle" class="menu__button">
-      <span></span>
-      <span></span>
-    </label>
-      <ul class="nav-links">
-        <li><a href="principalAlumno.html">Inicio</a></li>
-        <li><a href="MisProfesores.html">Mis profesores</a></li>
-        <li><a href="grupos.html">Grupos</a></li>
-        <li><a href="chatGrupo.html">Chat</a></li>
-        <li><a href="../index.html" class="nav-login">Cerrar sesión</a></li>
-      </ul>
+      </div>
     </nav>
   </header>
 
   <main class="Principal-inicio">
-    <div class="inicio-contenido main-content">
-
+    <div class="inicio-contenido"> 
+    <div class="row g-3">
+  <div class="col-lg-4">
     <section id="filtros">
       <h2>Buscar profesores</h2>
-      <form action="#" method="get" class="form-busqueda">
-        <label for="materia">Materia</label>
-        <select id="materia" name="materia">
-          <option value="">Todas</option>
-          <option value="matematica">Matemática</option>
-          <option value="ingles">Inglés</option>
-          <option value="fisica">Física</option>
-          <option value="quimica">Química</option>
-        </select>
-
-        <label for="modalidad">Modalidad</label>
-        <select id="modalidad" name="modalidad">
-          <option value="">Todas</option>
-          <option value="virtual">Virtual</option>
-          <option value="presencial">Presencial</option>
-          <option value="ambas">Ambas</option>
-        </select>
-       
-           <label for="precio">Precio máximo</label>
-           <input type="number" class="input-buscar" id="precio"  name="precio" placeholder="$5000">
-        
-        
-           <label for="horario">Horario</label>
-           <input type="text" class="input-buscar" id="horario"  name="horario" placeholder="Ej: Sábados">
-       
-        <button class="boton-buscar" type="submit">Buscar</button>
+      <form action="#" method="get" class="card">
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="materia" class="form-label">Materia</label>
+            <select id="materia" name="materia" class="form-select">
+              <option value="">Todas</option>
+              <option value="matematica">Matemática</option>
+              <option value="ingles">Inglés</option>
+              <option value="fisica">Física</option>
+              <option value="quimica">Química</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="modalidad" class="form-label">Modalidad</label>
+            <select id="modalidad" name="modalidad" class="form-select">
+              <option value="">Todas</option>
+              <option value="virtual">Virtual</option>
+              <option value="presencial">Presencial</option>
+              <option value="ambas">Ambas</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="precio" class="form-label">Precio máximo</label>
+            <input type="number" class="form-control" id="precio" name="precio" placeholder="$5000">
+          </div>
+          <div class="mb-3">
+            <label for="horario" class="form-label">Horario</label>
+            <input type="text" class="form-control" id="horario" name="horario" placeholder="Ej: Sábados">
+          </div>
+          <button class="btn btn-primary w-100" type="submit">Buscar</button>
+        </div>
       </form>
     </section>
+  </div>
 
+  <div class="col-lg-4">
     <section id="cercanos">
       <h2>Profesores cercanos</h2>
-
-      <article>
-        <h3>Lucía Molina</h3>
-        <p>Materia: Matemática</p>
-        <p>Modalidad: Virtual</p>
-        <p>Precio: $4.500/hora</p>
-        <p>Horarios: Lunes a viernes, tarde</p>
-        <a href="perfilProfesor.html">Ver perfil</a>
-      </article>
-
-      <article>
-        <h3>Diego Ruiz</h3>
-        <p>Materia: Inglés</p>
-        <p>Modalidad: Presencial</p>
-        <p>Precio: $5.000/hora</p>
-        <p>Horarios: Sábados, mañana</p>
-        <a href="perfilProfesor.html">Ver perfil</a>
-      </article>
+      <div class="d-flex flex-column gap-3">
+        <article class="card">
+          <div class="card-body">
+            <h3 class="card-title">Lucía Molina</h3>
+            <p class="card-text mb-1">Materia: Matemática</p>
+            <p class="card-text mb-1">Modalidad: Virtual</p>
+            <p class="card-text mb-1">Precio: $4.500/hora</p>
+            <p class="card-text">Horarios: Lunes a viernes, tarde</p>
+            <a href="perfilProfesor.html" class="btn btn-sm btn-secondary">Ver perfil</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <h3 class="card-title">Diego Ruiz</h3>
+            <p class="card-text mb-1">Materia: Inglés</p>
+            <p class="card-text mb-1">Modalidad: Presencial</p>
+            <p class="card-text mb-1">Precio: $5.000/hora</p>
+            <p class="card-text">Horarios: Sábados, mañana</p>
+            <a href="perfilProfesor.html" class="btn btn-sm btn-secondary">Ver perfil</a>
+          </div>
+        </article>
+      </div>
     </section>
+  </div>
 
+  <div class="col-lg-4">
     <section id="recomendados">
       <h2>Recomendados para vos</h2>
-
-      <article>
-        <h3>Sofía Vera</h3>
-        <p>Materia: Física</p>
-        <p>Modalidad: Ambas</p>
-        <p>Calificación: 4.9</p>
-        <a href="perfilProfesor.html">Ver perfil</a>
-      </article>
-
-      <article>
-        <h3>Juan Paz</h3>
-        <p>Materia: Química</p>
-        <p>Modalidad: Virtual</p>
-        <p>Calificación: 4.8</p>
-        <a href="perfilProfesor.html">Ver perfil</a>
-      </article>
+      <div class="d-flex flex-column gap-3">
+        <article class="card">
+          <div class="card-body">
+            <h3 class="card-title">Sofía Vera</h3>
+            <p class="card-text mb-1">Materia: Física</p>
+            <p class="card-text mb-1">Modalidad: Ambas</p>
+            <p class="card-text">Calificación: 4.9</p>
+            <a href="perfilProfesor.html" class="btn btn-sm btn-secondary">Ver perfil</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <h3 class="card-title">Juan Paz</h3>
+            <p class="card-text mb-1">Materia: Química</p>
+            <p class="card-text mb-1">Modalidad: Virtual</p>
+            <p class="card-text">Calificación: 4.8</p>
+            <a href="perfilProfesor.html" class="btn btn-sm btn-secondary">Ver perfil</a>
+          </div>
+        </article>
+      </div>
     </section>
-
-    </div>
+  </div>
+</div>
+</div>
   </main>
-
   <footer>
     <p>&copy; 2026 MiProfe. Todos los derechos reservados.</p>
   </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
