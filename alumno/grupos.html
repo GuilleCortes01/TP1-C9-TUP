@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Grupos - MiProfe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../Estilo/style.css">
     <link rel="stylesheet" href="../Estilo/styleAlumnos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,24 +14,29 @@
 </head>
 <body>
     <header>
-    
-    <nav class="navbar">
-      <a href="principalAlumno.html" class="logo">
-         <img src="../img/Logo_Principal.png" alt="">
-            MiProfe
-          </a>
-          <input type="checkbox" id="menu-toggle">
+    <nav class="navbar navbar-expand-lg mi-navbar">
+      <div class="container-fluid">
 
-      <label for="menu-toggle" class="menu__button">
-        <span></span>
-        <span></span>
-      </label>
-      <ul class="nav-links">
-        <li><a href="principalAlumno.html" class="nav-login">Inicio</a></li>
-        <li><a href="MisProfesores.html">Mis profesores</a></li>
-        <li><a href="chatGrupo.html">Chat</a></li>
-        <li><a href="../index.html" class="nav-login">Cerrar sesión</a></li>
-      </ul>
+        <a href="principalAlumno.html" class="navbar-brand mi-logo">
+          <img src="../img/Logo_Principal.png" alt="" width="44" height="44">
+          MiProfe
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navAlumno" aria-controls="navAlumno" aria-expanded="false" aria-label="Abrir menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navAlumno">
+          <ul class="navbar-nav ms-lg-auto align-items-lg-center gap-lg-2 mt-3 mt-lg-0">
+            <li class="nav-item"><a class="nav-link" href="principalAlumno.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="MisProfesores.html">Mis profesores</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="grupos.html">Grupos</a></li>
+            <li class="nav-item"><a class="nav-link" href="chatGrupo.html">Chat</a></li>
+            <li class="nav-item"><a class="btn mi-btn-cerrar-sesion mt-2 mt-lg-0" href="../index.html">Cerrar sesión</a></li>
+          </ul>
+        </div>
+
+      </div>
     </nav>
   </header>
 
@@ -83,5 +89,6 @@
   <footer>
     <p>&copy; 2026 MiProfe. Todos los derechos reservados.</p>
   </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
