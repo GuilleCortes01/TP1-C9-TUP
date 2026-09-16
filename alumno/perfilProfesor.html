@@ -44,46 +44,54 @@
   <main class="Principal-inicio">
     <div class="inicio-contenido">
 
-    <section id="datos-profesor" class="perfil-card">
-      <span class="avatar avatar--grande" aria-hidden="true">LM</span>
-      <div class="perfil-info">
-        <h2>Lucía Molina</h2>
-        <span class="materia-tag">Matemática</span>
-        <p>Bio: Profesora de Matemática con 5 años de experiencia dando clases a estudiantes de secundaria y universidad.</p>
-        <ul class="perfil-datos">
-          <li><strong>Precio:</strong> $4.500/hora</li>
-          <li><strong>Modalidad:</strong> Virtual</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="horarios" class="horarios-card">
-      <h3>Horarios disponibles</h3>
-      <ul>
-        <li>Lunes 16 a 19hs</li>
-        <li>Miércoles 16 a 19hs</li>
-        <li>Viernes 14 a 17hs</li>
+    <section id="datos-profesor" class="card">
+  <div class="card-body d-flex flex-column flex-sm-row align-items-sm-center gap-3">
+    <span class="avatar avatar--grande flex-shrink-0" aria-hidden="true">LM</span>
+    <div class="perfil-info">
+      <h2 class="card-title">Lucía Molina</h2>
+      <span class="badge text-bg-primary rounded-pill">Matemática</span>
+      <p class="card-text">Bio: Profesora de Matemática con 5 años de experiencia dando clases a estudiantes de secundaria y universidad.</p>
+      <ul class="list-unstyled d-flex flex-wrap gap-3">
+        <li><strong>Precio:</strong> $4.500/hora</li>
+        <li><strong>Modalidad:</strong> Virtual</li>
       </ul>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section id="resenas">
-      <h3>Reseñas</h3>
-      <article class="resena-card">
-        <p class="resena-calificacion">Calificación: 5 estrellas</p>
-        <p>"Excelente profesora, explica muy claro." - Martina T.</p>
-      </article>
-      <article class="resena-card">
-        <p class="resena-calificacion">Calificación: 4 estrellas</p>
-        <p>"Muy puntual y organizada." - Bruno F.</p>
-      </article>
-    </section>
+<section id="horarios" class="card">
+  <div class="card-body">
+    <h3 class="card-title">Horarios disponibles</h3>
+    <ul class="list-unstyled">
+      <li>Lunes 16 a 19hs</li>
+      <li>Miércoles 16 a 19hs</li>
+      <li>Viernes 14 a 17hs</li>
+    </ul>
+  </div>
+</section>
 
-    <section id="acciones">
-      <form action="#" method="post">
-        <button type="submit" class="btn-guardar">Solicitar clase</button>
-      </form>
-      <a href="chatGrupo.html" class="btn-cancelar">Enviar mensaje</a>
-    </section>
+<section id="resenas" class="d-flex flex-column gap-3">
+  <h3>Reseñas</h3>
+  <article class="card">
+    <div class="card-body">
+      <p class="fw-bold text-warning mb-1">Calificación: 5 estrellas</p>
+      <p class="card-text mb-0">"Excelente profesora, explica muy claro." - Martina T.</p>
+    </div>
+  </article>
+  <article class="card">
+    <div class="card-body">
+      <p class="fw-bold text-warning mb-1">Calificación: 4 estrellas</p>
+      <p class="card-text mb-0">"Muy puntual y organizada." - Bruno F.</p>
+    </div>
+  </article>
+</section>
+
+<section id="acciones" class="d-flex align-items-center gap-3">
+  <form action="#" method="post">
+    <button type="submit" class="btn btn-primary">Solicitar clase</button>
+  </form>
+  <a href="chatGrupo.html" class="btn btn-outline-secondary">Enviar mensaje</a>
+</section>
 
     </div>
   </main>

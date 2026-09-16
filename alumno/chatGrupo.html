@@ -41,68 +41,59 @@
   </header>
 
   <main class="Principal-inicio">
-    <div class="inicio-contenido chat-layout">
+    <div class="inicio-contenido chat-layout row g-3">
 
-    <!-- Panel izquierdo: Lista de conversaciones -->
-    <aside class="chat-sidebar">
-      <h2 class="sidebar-title">Conversaciones</h2>
-      <ul class="contact-list">
-        <li class="contact-item active">
-          <a href="#">
-            <div class="contact-info">
-              <h4>Lucía Molina</h4>
-              <p>Materia: Matemática</p>
-            </div>
-          </a>
-        </li>
-        <li class="contact-item">
-          <a href="#">
-            <div class="contact-info">
-              <h4>Grupo de Matemática</h4>
-              <p>5 integrantes</p>
-            </div>
-          </a>
-        </li>
-        <li class="contact-item">
-          <a href="#">
-            <div class="contact-info">
-              <h4>Sofía Vera</h4>
-              <p>Materia: Física</p>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </aside>
+    <aside class="card col-12 col-lg-4">
+  <div class="card-header">
+    <h2 class="h5 mb-0">Conversaciones</h2>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item p-0">
+      <a href="#" class="list-group-item list-group-item-action active border-0">
+        <h4 class="h6 mb-0">Lucía Molina</h4>
+        <p class="mb-0 small">Materia: Matemática</p>
+      </a>
+    </li>
+    <li class="list-group-item p-0">
+      <a href="#" class="list-group-item list-group-item-action border-0">
+        <h4 class="h6 mb-0">Grupo de Matemática</h4>
+        <p class="mb-0 small">5 integrantes</p>
+      </a>
+    </li>
+    <li class="list-group-item p-0">
+      <a href="#" class="list-group-item list-group-item-action border-0">
+        <h4 class="h6 mb-0">Sofía Vera</h4>
+        <p class="mb-0 small">Materia: Física</p>
+      </a>
+    </li>
+  </ul>
+</aside>
 
-    <!-- Panel derecho: Chat activo -->
-    <section class="chat-window">
-      <div class="chat-header">
-        <h2>Lucía Molina</h2>
-        <span class="status">En línea</span>
-      </div>
+<section class="card col-12 col-lg-8">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <h2 class="h5 mb-0">Lucía Molina</h2>
+    <span class="status">En línea</span>
+  </div>
 
-      <div class="chat-messages">
-        <!-- Mensaje recibido -->
-        <div class="message received">
-          <p>Hola, ¿cómo estás? Nos vemos el miércoles a las 16hs.</p>
-          <span class="time">10:30</span>
-        </div>
-        
-        <!-- Mensaje enviado -->
-        <div class="message sent">
-          <p>¡Perfecto! Ahí estaré.</p>
-          <span class="time">10:32</span>
-        </div>
-      </div>
+  <div class="chat-messages">
+    <div class="message received">
+      <p>Hola, ¿cómo estás? Nos vemos el miércoles a las 16hs.</p>
+      <span class="time">10:30</span>
+    </div>
+    <div class="message sent">
+      <p>¡Perfecto! Ahí estaré.</p>
+      <span class="time">10:32</span>
+    </div>
+  </div>
 
-      <!-- Área para escribir -->
-      <form action="#" method="post" class="chat-input-area">
-        <label for="mensaje" class="sr-only">Mensaje</label>
-        <input type="text" id="mensaje" name="mensaje" placeholder="Escribí un mensaje..." autocomplete="off" required>
-        <button type="submit" class="btn btn-primary">Enviar</button>
-      </form>
-    </section>
-
+  <form action="#" method="post" class="p-3 border-top">
+    <label for="mensaje" class="sr-only">Mensaje</label>
+    <div class="input-group">
+      <input type="text" id="mensaje" name="mensaje" class="form-control" placeholder="Escribí un mensaje..." autocomplete="off" required>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+  </form>
+</section>
     </div>
   </main>
 
