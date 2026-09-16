@@ -48,6 +48,39 @@
 
   --border-radius: 5px;
 }
+
+/* =========================
+   TP3 - TEMA DE BOOTSTRAP
+   Pisa las variables que usa Bootstrap para que .btn, .card, .badge, etc.
+   salgan directo con los colores/bordes de la marca, sin tener que armar
+   una clase custom por cada componente nuevo.
+========================= */
+
+:root {
+  --bs-primary: var(--color-primary);
+  --bs-primary-rgb: 45, 140, 240;
+  --bs-secondary: var(--color-secondary);
+  --bs-secondary-rgb: 135, 206, 235;
+  --bs-success: var(--accent-verde);
+  --bs-danger: var(--accent-rojo);
+  --bs-warning: var(--accent-naranja);
+  --bs-body-color: var(--font-color);
+  --bs-body-font-family: var(--font-body);
+  --bs-border-radius: var(--border-radius);
+  --bs-border-radius-sm: var(--border-radius);
+  --bs-border-radius-lg: var(--border-radius);
+  --bs-card-border-width: 2px;
+  --bs-card-border-color: var(--border-color);
+}
+
+.btn {
+  border-width: 2px;
+  font-weight: 700;
+}
+
+.card {
+  box-shadow: var(--shadow);
+}
 body {
   font-family: var(--font-body);
   color: var(--font-color);
@@ -60,16 +93,11 @@ h3,
 .title {
   font-family: var(--font-heading);
 }
-.nav-links a,
-.nav-login,
-.nav-register {
-  font-family: var(--font-body);
-  font-weight: 900;
-}
 /* =========================
-   NAVBAR
+   NAVBAR (TP2, reemplazado por Bootstrap)
 ========================= */
 
+/*
 header {
   width: 100%;
   background-color: var(--navbar-bg);
@@ -91,10 +119,6 @@ header {
 
   background-color: var(--navbar-bg);
 }
-
-/* =========================
-   LOGO
-========================= */
 
 .logo {
   display: flex;
@@ -120,10 +144,6 @@ header {
 .logo span {
   line-height: 1;
 }
-
-/* =========================
-   LINKS
-========================= */
 
 .nav-links {
   display: flex;
@@ -151,10 +171,6 @@ header {
   color: var(--color-primary);
 }
 
-/* =========================
-   BOTÓN LOGIN
-========================= */
-
 .nav-login {
   display: inline-block;
 
@@ -175,10 +191,6 @@ header {
   transform: translate(2px, 2px);
   box-shadow: 2px 2px var(--border-color);
 }
-
-/* =========================
-   BOTÓN REGISTRARSE
-========================= */
 
 .nav-register {
   display: inline-block;
@@ -204,10 +216,6 @@ header {
 
   box-shadow: 2px 2px var(--border-color);
 }
-
-/* =========================
-   HAMBURGER MENU
-========================= */
 
 #menu-toggle {
   display: none;
@@ -237,8 +245,6 @@ header {
   transition: 0.2s ease;
 }
 
-/* Barras */
-
 .menu__button span {
   position: absolute;
 
@@ -260,10 +266,6 @@ header {
   transform: translateY(4px);
 }
 
-/* =========================
-   HAMBURGER ABIERTO
-========================= */
-
 #menu-toggle:checked + .menu__button {
   background-color: var(--color-primary);
 }
@@ -278,6 +280,78 @@ header {
 
 #menu-toggle:checked + .menu__button span:last-child {
   transform: rotate(-45deg);
+}
+*/
+
+/* =========================
+   NAVBAR BOOTSTRAP (TP3)
+========================= */
+
+.mi-navbar {
+  background-color: var(--navbar-bg);
+  border-bottom: 2px solid var(--border-color);
+  padding: 0.85rem 5vw;
+}
+
+.mi-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.mi-logo img {
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.mi-navbar .navbar-toggler {
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.mi-navbar .navbar-toggler:focus {
+  box-shadow: var(--shadow);
+}
+
+.mi-navbar .nav-link {
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--navbar-text);
+}
+
+.mi-navbar .nav-link:hover,
+.mi-navbar .nav-link.active {
+  color: var(--color-primary);
+}
+
+.mi-btn-cerrar-sesion,
+.mi-btn-login,
+.mi-btn-register {
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+
+  background-color: var(--color-secondary);
+  box-shadow: var(--shadow);
+
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--font-color);
+
+  transition: 0.15s ease;
+}
+
+.mi-btn-cerrar-sesion:hover,
+.mi-btn-login:hover,
+.mi-btn-register:hover {
+  color: var(--font-color);
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px var(--border-color);
 }
 
 /* Evita que el <ul> del botón afecte al nav */
@@ -423,9 +497,10 @@ footer {
 }
 
 /* =========================
-   TABLET / CELULAR
+   TABLET / CELULAR (TP2, reemplazado por Bootstrap)
 ========================= */
 
+/*
 @media (max-width: 768px) {
 
   .navbar {
@@ -437,13 +512,9 @@ footer {
     justify-content: space-between;
   }
 
-  /* Mostrar botón */
-
   .menu__button {
     display: flex;
   }
-
-  /* Ocultar menú */
 
 .nav-links {
   display: none;
@@ -459,8 +530,6 @@ footer {
 
   background-color: var(--navbar-bg);
 }
-
-  /* Mostrar menú */
 
   #menu-toggle:checked ~ .nav-links {
     display: flex;
@@ -482,6 +551,7 @@ footer {
   }
 
 }
+*/
 
 .Principal-Registro {
   min-height: 88vh;

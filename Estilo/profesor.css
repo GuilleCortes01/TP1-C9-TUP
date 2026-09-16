@@ -13,7 +13,7 @@
    TARJETA DE PERFIL
 ========================= */
 
-.perfil-card {
+/* .perfil-card {
   position: relative;
   overflow: hidden;
 
@@ -28,9 +28,15 @@
   border: 2px solid var(--border-color);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
+} */
+
+.mi-card-accent {
+  position: relative;
+  overflow: hidden;
 }
 
 .perfil-card::before,
+.mi-card-accent::before,
 .form-card::before {
   content: "";
   position: absolute;
@@ -40,8 +46,19 @@
   height: 8px;
 
   border-radius: var(--border-radius) var(--border-radius) 0 0;
-  background: lightblue;
-   
+  background: var(--color-primary);
+}
+
+.mi-card-accent--violeta::before {
+  background: var(--accent-violeta);
+}
+
+.mi-card-accent--verde::before {
+  background: var(--accent-verde);
+}
+
+.mi-card-accent--naranja::before {
+  background: var(--accent-naranja);
 }
 
 .avatar--grande {
@@ -58,7 +75,7 @@
   margin-bottom: 0.4rem;
 }
 
-.materia-tag {
+/* .materia-tag {
   display: inline-block;
 
   padding: 0.25rem 0.8rem;
@@ -72,7 +89,7 @@
   font-size: 0.85rem;
   font-weight: 700;
   color: #ffffff;
-}
+} */
 
 .rating {
   display: flex;
@@ -110,14 +127,14 @@
    PERFIL DE PROFESOR (vista alumno)
 ========================= */
 
-.horarios-card {
+/* .horarios-card {
   padding: 1.5rem;
 
   background: #ffffff;
   border: 2px solid var(--border-color);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
-}
+} */
 
 .horarios-card h3 {
   margin-bottom: 0.9rem;
@@ -161,14 +178,14 @@
   gap: 1rem;
 }
 
-.resena-card {
+/* .resena-card {
   padding: 1.1rem 1.25rem;
 
   background: #ffffff;
   border: 2px solid var(--border-color);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
-}
+} */
 
 .resena-calificacion {
   margin-bottom: 0.3rem;
@@ -191,12 +208,15 @@
    RESUMEN / STAT CARDS
 ========================= */
 
+/*
 .resumen-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
 }
+*/
 
+/*
 .stat-card {
   padding: 1.5rem;
 
@@ -218,6 +238,7 @@
   margin-bottom: 0.8rem;
   color: var(--font-color);
 }
+*/
 
 .stat-numero {
   font-family: var(--font-heading);
@@ -227,26 +248,15 @@
   line-height: 1;
 }
 
-.stat-card--violeta {
-  border-top-color: lightblue;
-}
-
-.stat-card--verde {
-  border-top-color: lightblue;
-}
-
-.stat-card--verde .stat-numero {
+.mi-card-accent--verde .stat-numero {
   color: var(--accent-verde);
 }
 
-.stat-card--naranja {
-  border-top-color: lightblue;
-}
-
-.stat-card--naranja .stat-numero {
+.mi-card-accent--naranja .stat-numero {
   color: rgb(32, 32, 192)
 }
 
+/*
 .stat-link {
   display: inline-block;
   margin-top: 1rem;
@@ -271,6 +281,7 @@
   transform: translate(2px, 2px);
   box-shadow: 2px 2px var(--border-color);
 }
+*/
 
 .clases-lista {
   list-style: none;
@@ -281,8 +292,10 @@
 }
 
 .clases-lista li {
+  /*
   display: flex;
   justify-content: space-between;
+  */
   flex-wrap: wrap;
   gap: 1rem;
 
@@ -309,16 +322,17 @@
 ========================= */
 
 .chat-layout {
+  /*
   display: flex;
   align-items: flex-start;
   gap: 1.5rem;
-
+  */
   min-height: 60vh;
 }
 
+/*
 .conversaciones-panel {
   flex: 0 0 260px;
-
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -367,6 +381,7 @@
   background-color: var(--color-primary);
   color: #ffffff;
 }
+*/
 
 .avatar--mini {
   flex-shrink: 0;
@@ -378,9 +393,9 @@
   border-width: 1px;
 }
 
+/*
 .chat-panel {
   flex: 1;
-
   display: flex;
   flex-direction: column;
 
@@ -406,6 +421,7 @@
 .chat-panel-header h2 {
   font-size: 1.15rem;
 }
+*/
 
 .mensajes {
   flex: 1;
@@ -456,6 +472,7 @@
   color: #ffffff;
 }
 
+/*
 .chat-form {
   display: flex;
   gap: 0.75rem;
@@ -511,7 +528,9 @@
   transform: translate(2px, 2px);
   box-shadow: 2px 2px var(--border-color);
 }
+*/
 
+/*
 @media (max-width: 768px) {
   .chat-layout {
     flex-direction: column;
@@ -522,11 +541,13 @@
     width: 100%;
   }
 }
+*/
 
 /* =========================
    SOLICITUDES
 ========================= */
 
+/*
 .solicitudes-lista {
   display: flex;
   flex-direction: column;
@@ -553,6 +574,7 @@
   transform: translate(-3px, -3px);
   box-shadow: 7px 7px var(--border-color);
 }
+*/
 
 .avatar--chico {
   width: 56px;
@@ -578,6 +600,7 @@
   color: var(--font-color);
 }
 
+/*
 .solicitud-acciones {
   display: flex;
   gap: 0.75rem;
@@ -613,11 +636,13 @@
   transform: translate(2px, 2px);
   box-shadow: 2px 2px var(--border-color);
 }
+*/
 
 /* =========================
    FORMULARIO EDITAR PERFIL
 ========================= */
 
+/*
 .form-card {
   position: relative;
   overflow: hidden;
@@ -741,11 +766,13 @@
   display: flex;
   gap: 2rem;
 }
+*/
 
 /* =========================
    CHECKBOX (Uiverse.io by cssbuttons-io, adaptado)
 ========================= */
 
+/*
 .cntr {
   position: relative;
   display: inline-flex;
@@ -848,8 +875,9 @@
 
   margin-top: 0.5rem;
 }
+*/
 
-.btn-guardar {
+/* .btn-guardar {
   padding: 0.7rem 1.4rem;
 
   border: 2px solid var(--border-color);
@@ -865,14 +893,14 @@
 
   cursor: pointer;
   transition: 0.15s ease;
-}
+} */
 
 .btn-guardar:hover {
   transform: translate(2px, 2px);
   box-shadow: 2px 2px var(--border-color);
 }
 
-.btn-cancelar {
+/* .btn-cancelar {
   padding: 0.7rem 1.4rem;
 
   border: 2px solid var(--border-color);
@@ -886,16 +914,13 @@
   text-decoration: none;
 
   transition: 0.15s ease;
-}
+} */
 
 .btn-cancelar:hover {
   background-color: var(--navbar-bg);
   transform: translate(2px, 2px);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 480px) {
   .perfil-card {
@@ -904,3 +929,4 @@
     text-align: left;
   }
 }
+
