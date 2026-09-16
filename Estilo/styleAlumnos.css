@@ -166,7 +166,7 @@
   color: var(--font-color-sub);
 }
 
-#cercanos article a,
+/* #cercanos article a,
 #recomendados article a {
   display: inline-block;
   margin-top: 0.7rem;
@@ -190,7 +190,7 @@
 #recomendados article a:hover {
   transform: translate(2px, 2px);
   box-shadow: 2px 2px var(--border-color);
-}
+} */
 
 /* =========================
    MIS PROFESORES
@@ -202,24 +202,28 @@
   gap: 1.5rem;
 } */
 
-/* .profesor-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.profesor-card {
+  --bs-card-border-radius: 18px;
 
-  padding: 1.5rem;
-
-  background-color: #ffffff;
-  border: 2px solid var(--border-color);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-
+  overflow: visible;
+  text-align: center;
   transition: 0.15s ease;
-} */
+}
 
 .profesor-card:hover {
   transform: translate(-3px, -3px);
   box-shadow: 7px 7px var(--border-color);
+}
+
+.profesor-card-banner {
+  height: 56px;
+  padding: 0;
+  background-color: #eef0f2;
+}
+
+.profesor-card-avatar {
+  margin: -48px auto 0.75rem;
+  box-shadow: var(--shadow);
 }
 
 /* .profesor-info h3 {
