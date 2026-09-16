@@ -90,9 +90,10 @@ h1,
 h2,
 h3,
 .logo,
-/* .title {
+.title {
   font-family: var(--font-heading);
-} */
+}
+
 /* =========================
    NAVBAR (TP2, reemplazado por Bootstrap)
 ========================= */
@@ -360,7 +361,7 @@ header {
   margin: 0;
   padding: 0;
 }
-/* .form {
+.form {
   --input-focus: var(--color-primary);
   --font-color: var(--font-color);
   --font-color-sub: var(--font-color-sub);
@@ -382,14 +383,14 @@ header {
   border-radius: var(--border-radius);
   border: 2px solid var(--border-color);
   box-shadow: var(--shadow);
-} */
+}
 
-/* .title {
+.title {
   color: var(--font-color);
   font-weight: 900;
   font-size: 20px;
   margin-bottom: 1rem;
-} */
+}
 
 .title span {
   color: var(--font-color-sub);
@@ -1257,6 +1258,7 @@ footer {
 
   border: 2px solid var(--border-color);
   border-radius: 24px;
+  box-shadow: var(--shadow);
 
   background-color: var(--color-secondary);
 }

@@ -136,6 +136,7 @@
   box-shadow: var(--shadow);
 } */
 
+/*
 .horarios-card h3 {
   margin-bottom: 0.9rem;
 }
@@ -167,6 +168,7 @@
   border-radius: 50%;
   background: var(--color-primary);
 }
+*/
 
 #resenas h3 {
   margin-bottom: 0.9rem;
@@ -187,12 +189,14 @@
   box-shadow: var(--shadow);
 } */
 
+/*
 .resena-calificacion {
   margin-bottom: 0.3rem;
 
   font-weight: 700;
   color: #f5a623;
 }
+*/
 
 #acciones {
   display: flex;
@@ -895,10 +899,12 @@
   transition: 0.15s ease;
 } */
 
+/*
 .btn-guardar:hover {
   transform: translate(2px, 2px);
   box-shadow: 2px 2px var(--border-color);
 }
+*/
 
 /* .btn-cancelar {
   padding: 0.7rem 1.4rem;
@@ -916,12 +922,14 @@
   transition: 0.15s ease;
 } */
 
+/*
 .btn-cancelar:hover {
   background-color: var(--navbar-bg);
   transform: translate(2px, 2px);
 }
+*/
 
-
+/*
 @media (max-width: 480px) {
   .perfil-card {
     flex-direction: column;
@@ -929,4 +937,5 @@
     text-align: left;
   }
 }
+*/
 
