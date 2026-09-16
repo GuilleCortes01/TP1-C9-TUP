@@ -38,197 +38,199 @@
     <main class="Principal-inicio">
     <div class="inicio-contenido">
 
-    <section id="hero" class="hero">
-      <div class="hero-content">
-        <span class="badge">★ Clases particulares, sin vueltas</span>
+    
+    <section id="hero" class="row align-items-center g-4">
+  <div class="col-lg-6">
+    <span class="badge rounded-pill text-bg-secondary border">★ Clases particulares, sin vueltas</span>
+    <h1 class="mt-3">Encontrá al profesor <span class="text-primary">particular</span> perfecto para vos.</h1>
+    <p class="text-secondary">Buscá por materia, nivel y zona, chateá con quien más te convenza y coordiná tus clases — todo desde un solo lugar.</p>
 
-        <h1>Encontrá al profesor <span class="highlight">particular</span> perfecto para vos.</h1>
+    <form class="d-flex flex-wrap gap-2" action="Register.html" method="get">
+      <input type="text" name="materia" class="form-control flex-grow-1" style="min-width:220px" placeholder="¿Qué querés aprender? Matemática, Inglés, Programación...">
+      <input type="text" name="zona" class="form-control" style="max-width:160px" placeholder="Zona">
+      <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
 
-        <p class="hero-subtitle">Buscá por materia, nivel y zona, chateá con quien más te convenza y coordiná tus clases — todo desde un solo lugar.</p>
+    <p class="text-secondary mt-3"><strong>Populares:</strong> Matemática · Inglés · Física · Programación · Química</p>
+  </div>
 
-        <form class="hero-search" action="Register.html" method="get">
-          <label for="hero-search-materia" class="sr-only">Qué querés aprender</label>
-          <div class="hero-search-field">
-            <svg class="hero-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <input type="text" id="hero-search-materia" name="materia" placeholder="¿Qué querés aprender? Matemática, Inglés, Programación...">
+  <div class="col-lg-6">
+    <div class="card mx-auto" style="max-width:320px;">
+      <div class="card-body">
+        <div class="d-flex align-items-center gap-2">
+          <span class="avatar">VR</span>
+          <div class="flex-grow-1">
+            <strong>Valentina R.</strong>
+            <p class="mb-0 small text-secondary">Matemática · Física</p>
           </div>
-
-          <label for="hero-search-zona" class="sr-only">Zona</label>
-          <div class="hero-search-field hero-search-field--zona">
-            <svg class="hero-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
-            <input type="text" id="hero-search-zona" name="zona" placeholder="Zona">
-          </div>
-
-          <button type="submit">Buscar</button>
-        </form>
-
-        <p class="hero-popular"><strong>Populares:</strong> Matemática · Inglés · Física · Programación · Química</p>
-      </div>
-
-      <div class="hero-visual">
-        <div class="hero-visual-bg"></div>
-
-        <div class="profile-card">
-          <div class="profile-card-top">
-            <span class="avatar">VR</span>
-            <div class="profile-card-info">
-              <strong>Valentina R.</strong>
-              <p>Matemática · Física</p>
-            </div>
-            <span class="rating">★ 4.9</span>
-          </div>
-
-          <div class="profile-card-tags">
-            <span>Virtual</span>
-            <span>Nivel secundario</span>
-          </div>
-
-          <div class="profile-card-bottom">
-            <p class="price">$4.500 <span>/hora</span></p>
-            <a href="Register.html">Ver perfil</a>
-          </div>
+          <span>★ 4.9</span>
         </div>
-
-        <div class="hero-visual-badge">
-          <img src="./img/Logo_Principal.png" alt="">
+        <div class="d-flex gap-2 mt-3">
+          <span class="badge text-bg-light border">Virtual</span>
+          <span class="badge text-bg-light border">Nivel secundario</span>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mt-3">
+          <p class="mb-0 fw-bold">$4.500 <small class="text-secondary fw-normal">/hora</small></p>
+          <a href="Register.html" class="btn btn-sm btn-primary">Ver perfil</a>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section id="beneficios" class="beneficios">
-      <article>
-        <span class="beneficio-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l2.5 2.5L16 9.5"></path></svg>
-        </span>
-        <h3>Perfiles verificados</h3>
-        <p>Identidad y formación confirmadas.</p>
-      </article>
-
-      <article>
-        <span class="beneficio-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"></rect><line x1="3" y1="10.5" x2="21" y2="10.5"></line></svg>
-        </span>
-        <h3>Sin comisiones ocultas</h3>
-        <p>Vos acordás el precio con tu profe.</p>
-      </article>
-
-      <article>
-        <span class="beneficio-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H8l-4 4V5z"></path></svg>
-        </span>
-        <h3>Chat integrado</h3>
-        <p>Coordiná todo sin salir de MiProfe.</p>
-      </article>
-    </section>
-
-    <section id="como-funciona" class="como-funciona">
-      <span class="badge badge--center">Cómo funciona</span>
-      <h2>De la búsqueda a tu primera clase, en tres pasos</h2>
-
-      <div class="pasos">
-        <article>
-          <span class="paso-num">01</span>
-          <h3>Buscá y comparná</h3>
-          <p>Filtrá profesores por materia, precio, modalidad y horario hasta encontrar el que mejor encaje con vos.</p>
-        </article>
-
-        <article>
-          <span class="paso-num">02</span>
-          <h3>Enviá tu solicitud</h3>
-          <p>Contale al profesor qué necesitás. Cuando la acepta, ya podés coordinar el primer encuentro por chat.</p>
-        </article>
-
-        <article>
-          <span class="paso-num">03</span>
-          <h3>Aprendé a tu ritmo</h3>
-          <p>Llevá tus clases, tus grupos de estudio y tu progreso desde un panel pensado para vos.</p>
-        </article>
+   <section id="beneficios" class="row g-3">
+  <div class="col-md-4">
+    <article class="card h-100 text-center">
+      <div class="card-body">
+        <div class="fs-2 text-primary mb-2">✓</div>
+        <h3 class="card-title h5">Perfiles verificados</h3>
+        <p class="card-text">Identidad y formación confirmadas.</p>
       </div>
-    </section>
-
-    <section id="materias" class="materias">
-      <h2>Elegí por materia</h2>
-
-      <div class="materias-grid">
-        <a href="Register.html">∑ Matemática</a>
-        <a href="Register.html">EN Inglés</a>
-        <a href="Register.html">⚛ Física</a>
-        <a href="Register.html">&lt;/&gt; Programación</a>
-        <a href="Register.html">⚗ Química</a>
-        <a href="Register.html">✎ Lengua</a>
-        <a href="Register.html">📜 Historia</a>
-        <a href="Register.html" class="materias-ver-todas">+ Ver todas</a>
+    </article>
+  </div>
+  <div class="col-md-4">
+    <article class="card h-100 text-center">
+      <div class="card-body">
+        <div class="fs-2 text-primary mb-2">💳</div>
+        <h3 class="card-title h5">Sin comisiones ocultas</h3>
+        <p class="card-text">Vos acordás el precio con tu profe.</p>
       </div>
-    </section>
-
-    <section id="destacados" class="destacados">
-      <div class="destacados-header">
-        <h2>Profesores destacados esta semana</h2>
-        <a href="Register.html">Ver todos →</a>
+    </article>
+  </div>
+  <div class="col-md-4">
+    <article class="card h-100 text-center">
+      <div class="card-body">
+        <div class="fs-2 text-primary mb-2">💬</div>
+        <h3 class="card-title h5">Chat integrado</h3>
+        <p class="card-text">Coordiná todo sin salir de MiProfe.</p>
       </div>
+    </article>
+  </div>
+</section>
 
-      <div class="destacados-grid">
-        <article class="profe-card">
-          <div class="profile-card-top">
+    <section id="como-funciona" class="text-center">
+  <span class="badge rounded-pill text-bg-secondary border mb-2">Cómo funciona</span>
+  <h2 class="mb-4">De la búsqueda a tu primera clase, en tres pasos</h2>
+
+  <div class="row g-3 text-start">
+    <div class="col-md-4">
+      <article class="card h-100">
+        <div class="card-body">
+          <span class="display-6 fw-bold text-primary">01</span>
+          <h3 class="card-title h5 mt-2">Buscá y comparná</h3>
+          <p class="card-text">Filtrá profesores por materia, precio, modalidad y horario hasta encontrar el que mejor encaje con vos.</p>
+        </div>
+      </article>
+    </div>
+    <div class="col-md-4">
+      <article class="card h-100">
+        <div class="card-body">
+          <span class="display-6 fw-bold text-primary">02</span>
+          <h3 class="card-title h5 mt-2">Enviá tu solicitud</h3>
+          <p class="card-text">Contale al profesor qué necesitás. Cuando la acepta, ya podés coordinar el primer encuentro por chat.</p>
+        </div>
+      </article>
+    </div>
+    <div class="col-md-4">
+      <article class="card h-100">
+        <div class="card-body">
+          <span class="display-6 fw-bold text-primary">03</span>
+          <h3 class="card-title h5 mt-2">Aprendé a tu ritmo</h3>
+          <p class="card-text">Llevá tus clases, tus grupos de estudio y tu progreso desde un panel pensado para vos.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+   <section id="materias">
+  <h2 class="mb-3">Elegí por materia</h2>
+  <div class="row g-2">
+    <div class="col-6 col-md-3"><a href="Register.html" class="btn btn-outline-secondary w-100">∑ Matemática</a></div>
+    <div class="col-6 col-md-3"><a href="Register.html" class="btn btn-outline-secondary w-100">EN Inglés</a></div>
+    <div class="col-6 col-md-3"><a href="Register.html" class="btn btn-outline-secondary w-100">⚛ Física</a></div>
+    <div class="col-6 col-md-3"><a href="Register.html" class="btn btn-outline-secondary w-100">&lt;/&gt; Programación</a></div>
+    <div class="col-6 col-md-3"><a href="Register.html" class="btn btn-outline-secondary w-100">⚗ Química</a></div>
+    <div class="col-6 col-md-3"><a href="Register.html" class="btn btn-outline-secondary w-100">✎ Lengua</a></div>
+    <div class="col-6 col-md-3"><a href="Register.html" class="btn btn-outline-secondary w-100">📜 Historia</a></div>
+    <div class="col-6 col-md-3"><a href="Register.html" class="btn btn-link w-100">+ Ver todas</a></div>
+  </div>
+</section>
+
+   <section id="destacados">
+  <div class="d-flex justify-content-between align-items-baseline mb-3">
+    <h2>Profesores destacados esta semana</h2>
+    <a href="Register.html" class="link-primary">Ver todos →</a>
+  </div>
+  <div class="row g-3">
+    <div class="col-md-4">
+      <article class="card h-100">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2">
             <span class="avatar">TM</span>
-            <div class="profile-card-info">
-              <strong>Tomás M.</strong>
-              <p>Programación · Álgebra</p>
-            </div>
+            <div><strong>Tomás M.</strong><p class="mb-0 small text-secondary">Programación · Álgebra</p></div>
           </div>
-          <p class="profe-quote">"Enseño con proyectos reales, para que lo que aprendas te sirva desde el primer día."</p>
-          <div class="profile-card-bottom">
-            <p class="price">$5.200 <span>/hora</span></p>
-            <span class="rating">★ 5.0</span>
+          <p class="fst-italic text-secondary mt-3">"Enseño con proyectos reales, para que lo que aprendas te sirva desde el primer día."</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <p class="mb-0 fw-bold">$5.200 <small class="text-secondary fw-normal">/hora</small></p>
+            <span>★ 5.0</span>
           </div>
-        </article>
-
-        <article class="profe-card">
-          <div class="profile-card-top">
+        </div>
+      </article>
+    </div>
+    <div class="col-md-4">
+      <article class="card h-100">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2">
             <span class="avatar">CL</span>
-            <div class="profile-card-info">
-              <strong>Camila L.</strong>
-              <p>Inglés · Preparación de exámenes</p>
-            </div>
+            <div><strong>Camila L.</strong><p class="mb-0 small text-secondary">Inglés · Preparación de exámenes</p></div>
           </div>
-          <p class="profe-quote">"Clases dinámicas y en inglés desde el minuto uno. Ideal si tenés un viaje o examen cerca."</p>
-          <div class="profile-card-bottom">
-            <p class="price">$4.000 <span>/hora</span></p>
-            <span class="rating">★ 4.8</span>
+          <p class="fst-italic text-secondary mt-3">"Clases dinámicas y en inglés desde el minuto uno. Ideal si tenés un viaje o examen cerca."</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <p class="mb-0 fw-bold">$4.000 <small class="text-secondary fw-normal">/hora</small></p>
+            <span>★ 4.8</span>
           </div>
-        </article>
-
-        <article class="profe-card">
-          <div class="profile-card-top">
+        </div>
+      </article>
+    </div>
+    <div class="col-md-4">
+      <article class="card h-100">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2">
             <span class="avatar">FS</span>
-            <div class="profile-card-info">
-              <strong>Franco S.</strong>
-              <p>Física · Química</p>
-            </div>
+            <div><strong>Franco S.</strong><p class="mb-0 small text-secondary">Física · Química</p></div>
           </div>
-          <p class="profe-quote">"Profesor de secundaria hace 8 años. Te ayudo a entender, no solo a memorizar."</p>
-          <div class="profile-card-bottom">
-            <p class="price">$3.800 <span>/hora</span></p>
-            <span class="rating">★ 4.9</span>
+          <p class="fst-italic text-secondary mt-3">"Profesor de secundaria hace 8 años. Te ayudo a entender, no solo a memorizar."</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <p class="mb-0 fw-bold">$3.800 <small class="text-secondary fw-normal">/hora</small></p>
+            <span>★ 4.9</span>
           </div>
-        </article>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+    <section id="cta" class="row g-3">
+  <div class="col-md-6">
+    <article class="card text-white bg-dark h-100">
+      <div class="card-body">
+        <h3 class="card-title">¿Querés aprender?</h3>
+        <p class="card-text">Explorá cientos de profesores particulares y empezá hoy mismo.</p>
+        <a href="Register.html?rol=alumno" class="btn btn-primary">Buscar profesor</a>
       </div>
-    </section>
-
-    <section id="cta" class="cta">
-      <article class="cta-box cta-box--alumno">
-        <h3>¿Querés aprender?</h3>
-        <p>Explorá cientos de profesores particulares y empezá hoy mismo.</p>
-        <a href="Register.html?rol=alumno">Buscar profesor</a>
-      </article>
-
-      <article class="cta-box cta-box--profesor">
-        <h3>¿Querés dar clases?</h3>
-        <p>Publicá tu oferta, elegí tus horarios y empezá a generar ingresos enseñando.</p>
-        <a href="Register.html?rol=profesor">Ser profesor</a>
-      </article>
-    </section>
-
+    </article>
+  </div>
+  <div class="col-md-6">
+    <article class="card text-white bg-primary h-100">
+      <div class="card-body">
+        <h3 class="card-title">¿Querés dar clases?</h3>
+        <p class="card-text">Publicá tu oferta, elegí tus horarios y empezá a generar ingresos enseñando.</p>
+        <a href="Register.html?rol=profesor" class="btn btn-light">Ser profesor</a>
+      </div>
+    </article>
+  </div>
+</section>
     </div>
   </main>
 

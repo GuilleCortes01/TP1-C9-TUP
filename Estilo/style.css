@@ -90,9 +90,9 @@ h1,
 h2,
 h3,
 .logo,
-.title {
+/* .title {
   font-family: var(--font-heading);
-}
+} */
 /* =========================
    NAVBAR (TP2, reemplazado por Bootstrap)
 ========================= */
@@ -360,7 +360,7 @@ header {
   margin: 0;
   padding: 0;
 }
-.form {
+/* .form {
   --input-focus: var(--color-primary);
   --font-color: var(--font-color);
   --font-color-sub: var(--font-color-sub);
@@ -382,14 +382,14 @@ header {
   border-radius: var(--border-radius);
   border: 2px solid var(--border-color);
   box-shadow: var(--shadow);
-}
+} */
 
-.title {
+/* .title {
   color: var(--font-color);
   font-weight: 900;
   font-size: 20px;
   margin-bottom: 1rem;
-}
+} */
 
 .title span {
   color: var(--font-color-sub);
@@ -397,7 +397,7 @@ header {
   font-size: 17px;
 }
 
-.input {
+/* .input {
   width: 100%;
   height: 45px;
 
@@ -413,7 +413,7 @@ header {
 
   padding: 0.5rem 0.75rem;
   outline: none;
-}
+} */
 
 .input::placeholder {
   color: var(--font-color-sub);
@@ -461,7 +461,7 @@ header {
   transform: translate(3px, 3px);
 }
 
-.button-confirm {
+/* .button-confirm {
   margin: 1.5rem auto 0 auto;
 
   width: 130px;
@@ -478,7 +478,7 @@ header {
   color: var(--font-color);
 
   cursor: pointer;
-}
+} */
 
 footer {
   min-height: 12vh;
@@ -907,22 +907,22 @@ footer {
   cursor: pointer;
 }
 
-.form-fields {
+/* .form-fields {
   width: 100%;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: start;
   gap: 1rem 1.2rem;
-}
+} */
 
 /* Elementos que ocupan las 2 columnas dentro de .form-fields */
-.form-fields .form-subtitle,
+/* .form-fields .form-subtitle,
 .form-fields textarea.input,
 .form-fields .option-group,
 .form-fields .field-wide {
   grid-column: 1 / -1;
-}
+} */
 
 @media (max-width: 560px) {
   .form-fields {
@@ -943,7 +943,7 @@ footer {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--color-primary-dark);
-}
+} 
 
 .form select.input {
   cursor: pointer;
@@ -972,7 +972,7 @@ footer {
 }
 
 /* Grupo de opciones (radios/checkboxes): selección de rol, modalidad, etc. */
-.option-group {
+/* .option-group {
   width: 100%;
 
   border: 2px solid var(--border-color);
@@ -982,7 +982,7 @@ footer {
   box-shadow: var(--shadow);
 
   padding: 0.75rem 1rem 0.9rem;
-}
+} */
 
 .option-group legend {
   margin-left: -0.3rem;
@@ -993,14 +993,14 @@ footer {
   color: var(--font-color-sub);
 }
 
-.option-list {
+/* .option-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.9rem;
   margin-top: 0.5rem;
-}
+} */
 
-.option-item {
+/* .option-item {
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -1010,7 +1010,7 @@ footer {
   color: var(--font-color);
 
   cursor: pointer;
-}
+} */
 
 .option-item input {
   width: 16px;
@@ -1020,7 +1020,7 @@ footer {
   cursor: pointer;
 }
 
-.terms-check {
+/* .terms-check {
   display: flex;
   align-items: flex-start;
   gap: 0.6rem;
@@ -1029,7 +1029,7 @@ footer {
   color: var(--font-color-sub);
 
   cursor: pointer;
-}
+} */
 
 .terms-check input {
   flex-shrink: 0;
@@ -1099,7 +1099,7 @@ footer {
   margin: 0 auto;
 }
 
-.badge {
+/* .badge {
   display: inline-block;
 
   padding: 0.4rem 0.9rem;
@@ -1112,7 +1112,7 @@ footer {
   font-size: 0.8rem;
   font-weight: 700;
   color: var(--font-color);
-}
+} */
 
 .badge--center {
   display: block;
@@ -1122,12 +1122,12 @@ footer {
 
 /* --- Hero --- */
 
-.hero {
+/* .hero {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
   gap: 3rem;
-}
+} */
 
 .hero-content {
   display: flex;
@@ -1261,7 +1261,7 @@ footer {
   background-color: var(--color-secondary);
 }
 
-.profile-card {
+/* .profile-card {
   position: relative;
   z-index: 1;
 
@@ -1276,14 +1276,14 @@ footer {
   border: 2px solid var(--border-color);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
-}
+} */
 
-.profile-card-top,
+/* .profile-card-top,
 .profe-card .profile-card-top {
   display: flex;
   align-items: center;
   gap: 0.7rem;
-}
+} */
 
 .avatar {
   flex-shrink: 0;
@@ -1419,11 +1419,11 @@ footer {
 
 /* --- Beneficios --- */
 
-.beneficios {
+/* .beneficios {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-}
+} */
 
 .beneficios article {
   display: flex;
@@ -1438,7 +1438,7 @@ footer {
   background-color: #ffffff;
   box-shadow: var(--shadow);
 }
-
+/* 
 .beneficio-icon {
   display: flex;
   align-items: center;
@@ -1451,7 +1451,7 @@ footer {
   border-radius: 50%;
 
   background-color: var(--color-secondary);
-}
+} */
 
 .beneficio-icon svg {
   width: 20px;
@@ -1474,18 +1474,18 @@ footer {
   text-align: center;
 }
 
-.como-funciona h2 {
+/* .como-funciona h2 {
   font-size: 1.7rem;
   margin-bottom: 2rem;
-}
+} */
 
-.pasos {
+/* .pasos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 
   text-align: left;
-}
+} */
 
 .pasos article {
   padding: 1.5rem;
@@ -1497,7 +1497,7 @@ footer {
   box-shadow: var(--shadow);
 }
 
-.paso-num {
+/* .paso-num {
   display: block;
   margin-bottom: 0.75rem;
 
@@ -1505,7 +1505,7 @@ footer {
   font-size: 1.8rem;
   font-weight: 800;
   color: var(--color-primary);
-}
+} */
 
 .pasos h3 {
   font-size: 1.05rem;
@@ -1524,11 +1524,11 @@ footer {
   font-size: 1.6rem;
 }
 
-.materias-grid {
+/* .materias-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-}
+} */
 
 .materias-grid a {
   padding: 0.9rem 1rem;
@@ -1560,7 +1560,7 @@ footer {
 
 /* --- Profesores destacados --- */
 
-.destacados-header {
+/* .destacados-header {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -1588,9 +1588,9 @@ footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-}
+} */
 
-.profe-card {
+/* .profe-card {
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
@@ -1602,25 +1602,25 @@ footer {
 
   background-color: #ffffff;
   box-shadow: var(--shadow);
-}
+} */
 
-.profe-quote {
+/* .profe-quote {
   font-size: 0.85rem;
   font-style: italic;
   color: var(--font-color-sub);
-}
+} */
 
-.profe-card .profile-card-bottom a {
+/* .profe-card .profile-card-bottom a {
   display: none;
-}
+} */
 
 /* --- CTA final --- */
 
-.cta {
+/* .cta {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
-}
+} */
 
 .cta-box {
   padding: 2rem;

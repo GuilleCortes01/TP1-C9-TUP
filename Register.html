@@ -57,148 +57,162 @@
       <div class="auth-panel">
       <!-- Mismo estilo de formulario que Login.html (Uiverse.io by ayyjayy2), adaptado para registro -->
       <form class="form form--register" action="#" method="post">
-        <div class="title">Sumate,<br><span>creá tu cuenta para empezar</span></div>
+  <div class="title">Sumate,<br><span>creá tu cuenta para empezar</span></div>
 
-        <!-- Controla el paso visible, sin JS -->
-        <input type="radio" class="step-toggle" id="paso-1" name="paso" checked>
-        <input type="radio" class="step-toggle" id="paso-2" name="paso">
+  <!-- Controla el paso visible, sin JS -->
+  <input type="radio" class="step-toggle" id="paso-1" name="paso" checked>
+  <input type="radio" class="step-toggle" id="paso-2" name="paso">
 
-        <!-- Paso 1: cuenta -->
-        <div class="form-step" id="contenido-paso-1">
-          <p class="form-step-title">Paso 1 de 2 · Tus datos</p>
+  <!-- Paso 1: cuenta -->
+  <div class="form-step" id="contenido-paso-1">
+    <p class="form-step-title">Paso 1 de 2 · Tus datos</p>
 
-          <fieldset class="option-group role-select">
-            <legend>Quiero registrarme como</legend>
-            <div class="option-list">
-              <label class="option-item">
-                <input type="radio" id="rol-alumno" name="rol" value="alumno" checked>
-                Alumno
-              </label>
-              <label class="option-item">
-                <input type="radio" id="rol-profesor" name="rol" value="profesor">
-                Profesor
-              </label>
+    <fieldset class="mb-3">
+      <legend class="form-label">Quiero registrarme como</legend>
+      <div class="d-flex gap-4">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="rol-alumno" name="rol" value="alumno" checked>
+          <label class="form-check-label" for="rol-alumno">Alumno</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="rol-profesor" name="rol" value="profesor">
+          <label class="form-check-label" for="rol-profesor">Profesor</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="row g-3">
+      <div class="col-md-6">
+        <label for="nombre" class="sr-only">Nombre completo</label>
+        <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+      </div>
+      <div class="col-md-6">
+        <label for="email" class="sr-only">Email</label>
+        <input class="form-control" type="email" id="email" name="email" placeholder="Email" required>
+      </div>
+      <div class="col-md-6">
+        <label for="telefono" class="sr-only">Teléfono / WhatsApp</label>
+        <input class="form-control" type="tel" id="telefono" name="telefono" placeholder="Teléfono / WhatsApp" required>
+      </div>
+      <div class="col-md-6">
+        <label for="ciudad" class="sr-only">Ciudad / Zona</label>
+        <input class="form-control" type="text" id="ciudad" name="ciudad" placeholder="Ciudad / Zona" title="Ej: San Miguel de Tucumán" required>
+      </div>
+      <div class="col-md-6">
+        <label for="password" class="sr-only">Contraseña</label>
+        <input class="form-control" type="password" id="password" name="password" placeholder="Contraseña" minlength="8" required>
+      </div>
+      <div class="col-md-6">
+        <label for="password2" class="sr-only">Confirmar contraseña</label>
+        <input class="form-control" type="password" id="password2" name="password2" placeholder="Confirmar contraseña" minlength="8" required>
+      </div>
+    </div>
+
+    <label for="paso-2" class="btn btn-primary w-100 mt-3">Siguiente →</label>
+  </div>
+
+  <!-- Paso 2: según el rol -->
+  <div class="form-step" id="contenido-paso-2">
+    <label for="paso-1" class="paso-atras">← Volver</label>
+    <p class="form-step-title">Paso 2 de 2 · Contanos sobre vos</p>
+
+    <!-- Alumno -->
+    <div class="campos-alumno">
+      <p class="form-subtitle">Como alumno</p>
+      <div class="row g-3 mb-3">
+        <div class="col-md-6">
+          <label for="nivel-alumno" class="sr-only">Nivel educativo</label>
+          <select class="form-select" id="nivel-alumno" name="nivel_alumno">
+            <option value="">Nivel educativo</option>
+            <option value="primario">Primario</option>
+            <option value="secundario">Secundario</option>
+            <option value="universitario">Universitario</option>
+            <option value="adultos">Adultos</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label for="modalidad-preferida" class="sr-only">Modalidad preferida</label>
+          <select class="form-select" id="modalidad-preferida" name="modalidad_preferida">
+            <option value="">Modalidad preferida</option>
+            <option value="virtual">Virtual</option>
+            <option value="presencial">Presencial</option>
+            <option value="ambas">Ambas</option>
+          </select>
+        </div>
+        <div class="col-12">
+          <label for="materias-interes" class="sr-only">Materias de interés</label>
+          <input class="form-control" type="text" id="materias-interes" name="materias_interes" placeholder="Materias de interés" title="Ej: Matemática, Inglés">
+        </div>
+      </div>
+    </div>
+
+    <!-- Profesor -->
+    <div class="campos-profesor">
+      <p class="form-subtitle">Como profesor</p>
+      <div class="row g-3 mb-3">
+        <div class="col-md-6">
+          <label for="materia" class="sr-only">Materia principal</label>
+          <input class="form-control" type="text" id="materia" name="materia" placeholder="Materia principal" title="Materia principal que enseñás">
+        </div>
+        <div class="col-md-6">
+          <label for="nivel-profesor" class="sr-only">Nivel educativo que enseñás</label>
+          <select class="form-select" id="nivel-profesor" name="nivel_profesor">
+            <option value="">Nivel educativo que enseñás</option>
+            <option value="primario">Primario</option>
+            <option value="secundario">Secundario</option>
+            <option value="universitario">Universitario</option>
+            <option value="adultos">Adultos</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label for="formacion" class="sr-only">Formación académica</label>
+          <input class="form-control" type="text" id="formacion" name="formacion" placeholder="Formación académica" title="Ej: Profesorado en Matemática - UNT">
+        </div>
+        <div class="col-md-6">
+          <label for="experiencia" class="sr-only">Años de experiencia</label>
+          <input class="form-control" type="number" id="experiencia" name="experiencia" placeholder="Años de experiencia" min="0">
+        </div>
+        <div class="col-md-6">
+          <label for="precio" class="sr-only">Precio por hora</label>
+          <input class="form-control" type="number" id="precio" name="precio" placeholder="Precio por hora" min="0">
+        </div>
+        <div class="col-md-6">
+          <label for="horarios" class="sr-only">Horarios disponibles</label>
+          <input class="form-control" type="text" id="horarios" name="horarios" placeholder="Horarios disponibles" title="Ej: Lunes a viernes de 16 a 20hs">
+        </div>
+        <div class="col-12">
+          <fieldset>
+            <legend class="form-label">Modalidad que ofrecés</legend>
+            <div class="d-flex gap-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="modalidad-virtual-profesor" name="modalidad" value="virtual">
+                <label class="form-check-label" for="modalidad-virtual-profesor">Virtual</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="modalidad-presencial-profesor" name="modalidad" value="presencial">
+                <label class="form-check-label" for="modalidad-presencial-profesor">Presencial</label>
+              </div>
             </div>
           </fieldset>
-
-          <div class="form-fields">
-            <label for="nombre" class="sr-only">Nombre completo</label>
-            <input class="input" type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
-
-            <label for="email" class="sr-only">Email</label>
-            <input class="input" type="email" id="email" name="email" placeholder="Email" required>
-
-            <label for="telefono" class="sr-only">Teléfono / WhatsApp</label>
-            <input class="input" type="tel" id="telefono" name="telefono" placeholder="Teléfono / WhatsApp" required>
-
-            <label for="ciudad" class="sr-only">Ciudad / Zona</label>
-            <input class="input" type="text" id="ciudad" name="ciudad" placeholder="Ciudad / Zona" title="Ej: San Miguel de Tucumán" required>
-
-            <label for="password" class="sr-only">Contraseña</label>
-            <input class="input" type="password" id="password" name="password" placeholder="Contraseña" minlength="8" required>
-
-            <label for="password2" class="sr-only">Confirmar contraseña</label>
-            <input class="input" type="password" id="password2" name="password2" placeholder="Confirmar contraseña" minlength="8" required>
-          </div>
-
-          <label for="paso-2" class="button-confirm">Siguiente →</label>
         </div>
-
-        <!-- Paso 2: según el rol -->
-        <div class="form-step" id="contenido-paso-2">
-          <label for="paso-1" class="paso-atras">← Volver</label>
-          <p class="form-step-title">Paso 2 de 2 · Contanos sobre vos</p>
-
-          <!-- Alumno -->
-          <div class="form-fields campos-alumno">
-            <p class="form-subtitle">Como alumno</p>
-
-            <label for="nivel-alumno" class="sr-only">Nivel educativo</label>
-            <select class="input" id="nivel-alumno" name="nivel_alumno">
-              <option value="">Nivel educativo</option>
-              <option value="primario">Primario</option>
-              <option value="secundario">Secundario</option>
-              <option value="universitario">Universitario</option>
-              <option value="adultos">Adultos</option>
-            </select>
-
-            <label for="modalidad-preferida" class="sr-only">Modalidad preferida</label>
-            <select class="input" id="modalidad-preferida" name="modalidad_preferida">
-              <option value="">Modalidad preferida</option>
-              <option value="virtual">Virtual</option>
-              <option value="presencial">Presencial</option>
-              <option value="ambas">Ambas</option>
-            </select>
-
-            <label for="materias-interes" class="sr-only">Materias de interés</label>
-            <input class="input field-wide" type="text" id="materias-interes" name="materias_interes" placeholder="Materias de interés" title="Ej: Matemática, Inglés">
-          </div>
-
-          <!-- Profesor -->
-          <div class="form-fields campos-profesor">
-            <p class="form-subtitle">Como profesor</p>
-
-            <label for="materia" class="sr-only">Materia principal</label>
-            <input class="input" type="text" id="materia" name="materia" placeholder="Materia principal" title="Materia principal que enseñás">
-
-            <label for="nivel-profesor" class="sr-only">Nivel educativo que enseñás</label>
-            <select class="input" id="nivel-profesor" name="nivel_profesor">
-              <option value="">Nivel educativo que enseñás</option>
-              <option value="primario">Primario</option>
-              <option value="secundario">Secundario</option>
-              <option value="universitario">Universitario</option>
-              <option value="adultos">Adultos</option>
-            </select>
-
-            <label for="formacion" class="sr-only">Formación académica</label>
-            <input class="input" type="text" id="formacion" name="formacion" placeholder="Formación académica" title="Ej: Profesorado en Matemática - UNT">
-
-            <label for="experiencia" class="sr-only">Años de experiencia</label>
-            <input class="input" type="number" id="experiencia" name="experiencia" placeholder="Años de experiencia" min="0">
-
-            <label for="precio" class="sr-only">Precio por hora</label>
-            <input class="input" type="number" id="precio" name="precio" placeholder="Precio por hora" min="0">
-
-            <label for="horarios" class="sr-only">Horarios disponibles</label>
-            <input class="input" type="text" id="horarios" name="horarios" placeholder="Horarios disponibles" title="Ej: Lunes a viernes de 16 a 20hs">
-
-            <fieldset class="option-group">
-              <legend>Modalidad que ofrecés</legend>
-              <div class="option-list">
-                <label class="option-item">
-                  <input type="checkbox" name="modalidad" value="virtual">
-                  Virtual
-                </label>
-                <label class="option-item">
-                  <input type="checkbox" name="modalidad" value="presencial">
-                  Presencial
-                </label>
-              </div>
-            </fieldset>
-
-            <label for="descripcion" class="sr-only">Sobre mí</label>
-            <textarea class="input" id="descripcion" name="descripcion" placeholder="Contales a los alumnos sobre tu experiencia y metodología"></textarea>
-          </div>
-
-          <!-- Términos -->
-          <label class="terms-check">
-            <input type="checkbox" name="terminos" required>
-            <span>Acepto los <a href="#">Términos y condiciones</a> y la <a href="#">Política de privacidad</a> de MiProfe</span>
-          </label>
-
-          <div class="login-with">
-            <div class="button-log"><b>t</b></div>
-            <div class="button-log">
-              <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="56.6934px" viewBox="0 0 56.6934 56.6934" version="1.1" style="enable-background:new 0 0 56.6934 56.6934;" id="Layer_1" height="56.6934px" class="icon"><path d="M51.981,24.4812c-7.7173-0.0038-15.4346-0.0019-23.1518-0.001c0.001,3.2009-0.0038,6.4018,0.0019,9.6017  c4.4693-0.001,8.9386-0.0019,13.407,0c-0.5179,3.0673-2.3408,5.8723-4.9258,7.5991c-1.625,1.0926-3.492,1.8018-5.4168,2.139  c-1.9372,0.3306-3.9389,0.3729-5.8713-0.0183c-1.9651-0.3921-3.8409-1.2108-5.4773-2.3649  c-2.6166-1.8383-4.6135-4.5279-5.6388-7.5549c-1.0484-3.0788-1.0561-6.5046,0.0048-9.5805  c0.7361-2.1679,1.9613-4.1705,3.5708-5.8002c1.9853-2.0324,4.5664-3.4853,7.3473-4.0811c2.3812-0.5083,4.8921-0.4113,7.2234,0.294  c1.9815,0.6016,3.8082,1.6874,5.3044,3.1163c1.5125-1.5039,3.0173-3.0164,4.527-4.5231c0.7918-0.811,1.624-1.5865,2.3908-2.4196  c-2.2928-2.1218-4.9805-3.8274-7.9172-4.9056C32.0723,4.0363,26.1097,3.995,20.7871,5.8372  C14.7889,7.8907,9.6815,12.3763,6.8497,18.0459c-0.9859,1.9536-1.7057,4.0388-2.1381,6.1836  C3.6238,29.5732,4.382,35.2707,6.8468,40.1378c1.6019,3.1768,3.8985,6.001,6.6843,8.215c2.6282,2.0958,5.6916,3.6439,8.9396,4.5078  c4.0984,1.0993,8.461,1.0743,12.5864,0.1355c3.7284-0.8581,7.256-2.6397,10.0725-5.24c2.977-2.7358,5.1006-6.3403,6.2249-10.2138  C52.5807,33.3171,52.7498,28.8064,51.981,24.4812z"></path></svg>
-            </div>
-            <div class="button-log">
-              <svg class="icon" height="56.693px" id="Layer_1" version="1.1" viewBox="0 0 56.693 56.693" width="56.693px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z"></path></svg>
-            </div>
-          </div>
-
-          <button type="submit" class="button-confirm">Crear cuenta</button>
+        <div class="col-12">
+          <label for="descripcion" class="sr-only">Sobre mí</label>
+          <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Contales a los alumnos sobre tu experiencia y metodología"></textarea>
         </div>
-      </form>
+      </div>
+    </div>
+
+    <!-- Términos -->
+    <div class="form-check mb-3">
+      <input class="form-check-input" type="checkbox" id="terminos" name="terminos" required>
+      <label class="form-check-label" for="terminos">
+        Acepto los <a href="#">Términos y condiciones</a> y la <a href="#">Política de privacidad</a> de MiProfe
+      </label>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Crear cuenta</button>
+  </div>
+</form>
       <p class="auth-switch">¿Ya tenés cuenta? <a href="Login.html">Iniciá sesión acá</a></p>
       </div>
 
