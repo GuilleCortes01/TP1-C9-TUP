@@ -43,25 +43,25 @@
   <main class="Principal-inicio">
     <div class="inicio-contenido chat-layout row g-3">
 
-    <aside class="card col-12 col-lg-4">
+    <aside id="conversacionesGrupo" class="card col-12 col-lg-4">
   <div class="card-header">
     <h2 class="h5 mb-0">Conversaciones</h2>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item p-0">
-      <a href="#" class="list-group-item list-group-item-action active border-0">
+      <a href="#" class="list-group-item list-group-item-action active border-0" data-conversacion="lucia" data-nombre="Lucía Molina">
         <h4 class="h6 mb-0">Lucía Molina</h4>
         <p class="mb-0 small">Materia: Matemática</p>
       </a>
     </li>
     <li class="list-group-item p-0">
-      <a href="#" class="list-group-item list-group-item-action border-0">
+      <a href="#" class="list-group-item list-group-item-action border-0" data-conversacion="grupo-matematica" data-nombre="Grupo de Matemática">
         <h4 class="h6 mb-0">Grupo de Matemática</h4>
         <p class="mb-0 small">5 integrantes</p>
       </a>
     </li>
     <li class="list-group-item p-0">
-      <a href="#" class="list-group-item list-group-item-action border-0">
+      <a href="#" class="list-group-item list-group-item-action border-0" data-conversacion="sofia" data-nombre="Sofía Vera">
         <h4 class="h6 mb-0">Sofía Vera</h4>
         <p class="mb-0 small">Materia: Física</p>
       </a>
@@ -71,11 +71,11 @@
 
 <section class="card col-12 col-lg-8">
   <div class="card-header d-flex justify-content-between align-items-center">
-    <h2 class="h5 mb-0">Lucía Molina</h2>
+    <h2 class="h5 mb-0" id="chatGrupoNombre">Lucía Molina</h2>
     <span class="status">En línea</span>
   </div>
 
-  <div class="chat-messages">
+  <div class="chat-messages" id="mensajesGrupo">
     <div class="message received">
       <p>Hola, ¿cómo estás? Nos vemos el miércoles a las 16hs.</p>
       <span class="time">10:30</span>
@@ -86,10 +86,10 @@
     </div>
   </div>
 
-  <form action="#" method="post" class="p-3 border-top">
+  <form id="formMensajeGrupo" action="#" method="post" class="p-3 border-top">
     <label for="mensaje" class="sr-only">Mensaje</label>
     <div class="input-group">
-      <input type="text" id="mensaje" name="mensaje" class="form-control" placeholder="Escribí un mensaje..." autocomplete="off" required>
+      <input type="text" id="mensaje" name="mensaje" class="form-control" placeholder="Escribí un mensaje..." autocomplete="off">
       <button type="submit" class="btn btn-primary">Enviar</button>
     </div>
   </form>
@@ -100,7 +100,7 @@
   <footer>
     <p>&copy; 2026 MiProfe. Todos los derechos reservados.</p>
   </footer>
-  <script src="../js/alumno.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="../js/alumno.js"></script>
 </body>
 </html>

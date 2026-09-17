@@ -62,11 +62,14 @@
 
     <div class="mb-3">
       <label for="email" class="form-label">Email</label>
-      <input class="form-control" name="email" id="email" placeholder="Email" type="email">
+      <input class="form-control" name="email" id="email" placeholder="Email" type="email" required>
     </div>
     <div class="mb-3">
       <label for="password" class="form-label">Password</label>
-      <input class="form-control" name="password" id="password" placeholder="Password" type="password">
+      <div class="input-group">
+        <input class="form-control" name="password" id="password" placeholder="Password" type="password" required>
+        <button class="btn btn-outline-secondary" type="button" data-toggle-password="password">Mostrar</button>
+      </div>
     </div>
 
     <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
