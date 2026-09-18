@@ -1,7 +1,3 @@
-// Funcionalidades JS del panel de alumno (Inicio, Perfil del profesor, Chat de grupo, Editar perfil).
-// Mismo criterio que profesor.js: cada bloque valida que sus elementos existan antes de
-// engancharse, asi este archivo se puede incluir en cualquier pagina de alumno/ sin romper nada.
-
 function mostrarToast(mensaje, tipo = "success") {
   let contenedor = document.getElementById("miprofeToasts");
   if (!contenedor) {
@@ -30,6 +26,27 @@ function mostrarToast(mensaje, tipo = "success") {
   toastEl.addEventListener("hidden.bs.toast", () => toastEl.remove());
 }
 
+function mostrarCargando() {
+  let overlay = document.getElementById("overlayCargando");
+  if (!overlay) {
+    overlay = document.createElement("div");
+    overlay.id = "overlayCargando";
+    overlay.className = "overlay-cargando d-none";
+    overlay.innerHTML = `
+      <div class="loader">
+        <span class="loader-text">Cargando</span>
+        <span class="load"></span>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+  }
+  overlay.classList.remove("d-none");
+}
+
+function ocultarCargando() {
+  document.getElementById("overlayCargando")?.classList.add("d-none");
+}
+
 function activarValidacion(form, mensajeExito, { reset = false } = {}) {
   if (!form) return;
 
@@ -55,12 +72,71 @@ function normalizar(texto) {
   return texto
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
+    .replace(/[\u0300-\u036f]/g, "")
     .trim();
 }
 
 function slugify(texto) {
   return normalizar(texto).replace(/[^a-z0-9]+/g, "-");
+}
+
+function iniciales(nombre) {
+  return nombre
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((palabra) => palabra[0].toUpperCase())
+    .join("");
+}
+
+// ---------- Cuentas simuladas con localStorage (compartido con principal.js/profesor.js) ----------
+const CLAVE_CUENTAS = "miprofe_cuentas";
+const CLAVE_SESION = "miprofe_sesion";
+
+function obtenerCuentaActual() {
+  const sesion = JSON.parse(localStorage.getItem(CLAVE_SESION) || "null");
+  if (!sesion) return null;
+  const cuentas = JSON.parse(localStorage.getItem(CLAVE_CUENTAS) || "[]");
+  return cuentas.find((c) => c.email === sesion.email) || null;
+}
+
+function guardarCuentaActual(cuentaActualizada) {
+  const cuentas = JSON.parse(localStorage.getItem(CLAVE_CUENTAS) || "[]");
+  const indice = cuentas.findIndex((c) => c.email === cuentaActualizada.email);
+  if (indice === -1) return;
+
+  cuentas[indice] = cuentaActualizada;
+  localStorage.setItem(CLAVE_CUENTAS, JSON.stringify(cuentas));
+  localStorage.setItem(
+    CLAVE_SESION,
+    JSON.stringify({ nombre: cuentaActualizada.nombre, email: cuentaActualizada.email, rol: cuentaActualizada.rol })
+  );
+}
+
+function leerDatosFormulario(form) {
+  const datos = {};
+  const formData = new FormData(form);
+  new Set(formData.keys()).forEach((campo) => {
+    if (form.querySelector(`[name="${campo}"]`)?.type === "file") return;
+    const valores = formData.getAll(campo);
+    datos[campo] = valores.length > 1 ? valores : valores[0];
+  });
+  return datos;
+}
+
+function precargarFormulario(form, datos) {
+  if (!datos) return;
+  Object.entries(datos).forEach(([nombre, valor]) => {
+    if (valor === undefined) return;
+    const valores = Array.isArray(valor) ? valor : [valor];
+    form.querySelectorAll(`[name="${nombre}"]`).forEach((campo) => {
+      if (campo.type === "checkbox" || campo.type === "radio") {
+        campo.checked = valores.includes(campo.value);
+      } else {
+        campo.value = valor;
+      }
+    });
+  });
 }
 
 // ---------- principalAlumno.html: filtro de busqueda de profesores ----------
@@ -114,8 +190,10 @@ if (formFiltros) {
 const formSolicitarClase = document.getElementById("formSolicitarClase");
 if (formSolicitarClase) {
   const CLAVE_SOLICITADOS = "miprofe_alumno_solicitudes_enviadas";
+  const CLAVE_SOLICITUDES_COMPARTIDAS = "miprofe_solicitudes_compartidas";
   const boton = document.getElementById("btnSolicitarClase");
   const nombreProfesor = document.querySelector("#datos-profesor .card-title").textContent.trim();
+  const materiaProfesor = document.querySelector("#datos-profesor .badge")?.textContent.trim() || "";
   const id = slugify(nombreProfesor);
 
   const solicitados = JSON.parse(localStorage.getItem(CLAVE_SOLICITADOS) || "[]");
@@ -135,6 +213,22 @@ if (formSolicitarClase) {
 
     solicitados.push(id);
     localStorage.setItem(CLAVE_SOLICITADOS, JSON.stringify(solicitados));
+
+    // Si el alumno inicio sesion (ver principal.js), la solicitud lleva su nombre real.
+    const sesion = JSON.parse(localStorage.getItem("miprofe_sesion") || "null");
+    const nombreAlumno = sesion?.nombre || "Alumno invitado";
+
+    // localStorage es por navegador, no por pagina: guardando aca, profesor/Solicitudes.html
+    // (mismo origen) puede leer esta misma solicitud y mostrarla para aceptar/rechazar.
+    const compartidas = JSON.parse(localStorage.getItem(CLAVE_SOLICITUDES_COMPARTIDAS) || "[]");
+    compartidas.push({
+      id: `${id}-${Date.now()}`,
+      alumno: nombreAlumno,
+      materia: materiaProfesor,
+      horario: "A coordinar por chat",
+    });
+    localStorage.setItem(CLAVE_SOLICITUDES_COMPARTIDAS, JSON.stringify(compartidas));
+
     marcarComoSolicitado();
     mostrarToast(`Le enviaste una solicitud de clase a ${nombreProfesor}.`);
   });
@@ -237,8 +331,47 @@ if (listaConversaciones.length && mensajesContenedor) {
   }
 }
 
-// ---------- EditarPerfil.html y validaciones ----------
-activarValidacion(document.querySelector("#editar-perfil form"), "Perfil actualizado correctamente.");
+// ---------- principalAlumno.html: mostrar el nombre y los datos del alumno logueado ----------
+const seccionPerfilAlumno = document.getElementById("perfil");
+if (seccionPerfilAlumno && seccionPerfilAlumno.querySelector(".card-text")) {
+  const cuenta = obtenerCuentaActual();
+
+  if (cuenta) {
+    const titulo = seccionPerfilAlumno.querySelector(".card-title");
+    const avatar = seccionPerfilAlumno.querySelector(".avatar");
+    const textoNivelUbicacion = seccionPerfilAlumno.querySelector(".card-text");
+
+    if (titulo) titulo.textContent = cuenta.nombre;
+    if (avatar) avatar.textContent = iniciales(cuenta.nombre);
+
+    const perfil = cuenta.perfil || {};
+    const NIVELES = { primario: "Primario", secundario: "Secundario", universitario: "Universitario", adultos: "Adultos" };
+    const partes = [NIVELES[perfil.nivel] || perfil.nivel, perfil.ubicacion].filter(Boolean);
+
+    if (partes.length && textoNivelUbicacion) {
+      textoNivelUbicacion.textContent = partes.join(" · ");
+    }
+  }
+}
+
+// ---------- EditarPerfil.html: precargar con los datos guardados y guardar los cambios ----------
+const formEditarPerfilAlumno = document.querySelector("#editar-perfil form");
+if (formEditarPerfilAlumno) {
+  const cuenta = obtenerCuentaActual();
+
+  if (cuenta) {
+    precargarFormulario(formEditarPerfilAlumno, { nombre: cuenta.nombre, ...cuenta.perfil });
+  }
+
+  activarValidacion(formEditarPerfilAlumno, "Perfil actualizado correctamente.");
+
+  formEditarPerfilAlumno.addEventListener("submit", () => {
+    if (!cuenta || !formEditarPerfilAlumno.checkValidity()) return;
+
+    const { nombre, ...perfil } = leerDatosFormulario(formEditarPerfilAlumno);
+    guardarCuentaActual({ ...cuenta, nombre: nombre || cuenta.nombre, perfil });
+  });
+}
 
 // ---------- EditarPerfil.html: preview de foto de perfil ----------
 const inputFoto = document.getElementById("foto");
