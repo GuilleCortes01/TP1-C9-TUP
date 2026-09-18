@@ -604,6 +604,15 @@
   color: var(--font-color);
 }
 
+#solicitudes .card {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+#solicitudes .card.solicitud-resuelta {
+  opacity: 0;
+  transform: translateX(16px);
+}
+
 /*
 .solicitud-acciones {
   display: flex;

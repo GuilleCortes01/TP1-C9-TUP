@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /Login.html
+Disallow: /Register.html
+Disallow: /alumno/
+Disallow: /profesor/
+
+Sitemap: https://miprofe00.netlify.app/sitemap.xml
