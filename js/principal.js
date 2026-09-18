@@ -30,6 +30,27 @@ function mostrarToast(mensaje, tipo = "success") {
   toastEl.addEventListener("hidden.bs.toast", () => toastEl.remove());
 }
 
+function mostrarCargando() {
+  let overlay = document.getElementById("overlayCargando");
+  if (!overlay) {
+    overlay = document.createElement("div");
+    overlay.id = "overlayCargando";
+    overlay.className = "overlay-cargando d-none";
+    overlay.innerHTML = `
+      <div class="loader">
+        <span class="loader-text">Cargando</span>
+        <span class="load"></span>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+  }
+  overlay.classList.remove("d-none");
+}
+
+function ocultarCargando() {
+  document.getElementById("overlayCargando")?.classList.add("d-none");
+}
+
 // ---------- Login.html y Register.html: mostrar/ocultar contraseña ----------
 document.querySelectorAll("[data-toggle-password]").forEach((boton) => {
   const input = document.getElementById(boton.dataset.togglePassword);
@@ -58,31 +79,90 @@ if (password && password2) {
   password2.addEventListener("input", validarCoincidencia);
 }
 
-// ---------- Login.html y Register.html: enviar el formulario (sin backend) ----------
-function activarFormularioSimulado(form, mensajeExito) {
-  if (!form) return;
+// ---------- Login.html y Register.html: cuentas simuladas con localStorage ----------
+// No hay backend, asi que las "cuentas" se guardan en el navegador. No es seguro
+// (la contraseña queda en texto plano) ni persiste entre dispositivos distintos,
+// pero permite un login/registro que funciona de verdad dentro del mismo navegador.
+const CLAVE_CUENTAS = "miprofe_cuentas";
+const CLAVE_SESION = "miprofe_sesion";
 
-  form.setAttribute("novalidate", "");
-  form.addEventListener("submit", (evento) => {
+function leerCuentas() {
+  return JSON.parse(localStorage.getItem(CLAVE_CUENTAS) || "[]");
+}
+
+function iniciarSesion(cuenta) {
+  localStorage.setItem(
+    CLAVE_SESION,
+    JSON.stringify({ nombre: cuenta.nombre, email: cuenta.email, rol: cuenta.rol })
+  );
+}
+
+function irAlPanel(rol) {
+  window.location.href = rol === "profesor" ? "profesor/PrincipalProfesor.html" : "alumno/principalAlumno.html";
+}
+
+const formLogin = document.querySelector(".auth-panel form.card");
+if (formLogin) {
+  formLogin.setAttribute("novalidate", "");
+  formLogin.addEventListener("submit", (evento) => {
     evento.preventDefault();
 
-    if (!form.checkValidity()) {
-      form.classList.add("was-validated");
+    if (!formLogin.checkValidity()) {
+      formLogin.classList.add("was-validated");
       return;
     }
 
-    mostrarToast(mensajeExito, "success");
+    const email = document.getElementById("email").value.trim().toLowerCase();
+    const contrasena = document.getElementById("password").value;
+    const cuenta = leerCuentas().find((c) => c.email === email && c.password === contrasena);
+
+    if (!cuenta) {
+      mostrarToast("Email o contraseña incorrectos. ¿Ya te registraste?", "danger");
+      return;
+    }
+
+    iniciarSesion(cuenta);
+    mostrarToast(`¡Bienvenido/a, ${cuenta.nombre}! Te llevamos a tu panel...`);
+    mostrarCargando();
+    setTimeout(() => irAlPanel(cuenta.rol), 1200);
   });
 }
 
-activarFormularioSimulado(
-  document.querySelector(".auth-panel form.card"),
-  "Inicio de sesión simulado: todavía no hay backend conectado. Usá los accesos directos de abajo para entrar."
-);
-activarFormularioSimulado(
-  document.querySelector("form.form--register"),
-  "Cuenta creada (simulada). En un backend real, acá te llevaríamos a completar tu perfil."
-);
+const formRegistro = document.querySelector("form.form--register");
+if (formRegistro) {
+  formRegistro.setAttribute("novalidate", "");
+  formRegistro.addEventListener("submit", (evento) => {
+    evento.preventDefault();
+
+    if (!formRegistro.checkValidity()) {
+      formRegistro.classList.add("was-validated");
+      return;
+    }
+
+    const email = document.getElementById("email").value.trim().toLowerCase();
+    const cuentas = leerCuentas();
+
+    if (cuentas.some((c) => c.email === email)) {
+      mostrarToast("Ya existe una cuenta registrada con ese email.", "danger");
+      return;
+    }
+
+    const cuenta = {
+      nombre: document.getElementById("nombre").value.trim(),
+      email,
+      password: document.getElementById("password").value,
+      rol: document.querySelector('input[name="rol"]:checked').value,
+    };
+
+    cuentas.push(cuenta);
+    localStorage.setItem(CLAVE_CUENTAS, JSON.stringify(cuentas));
+    iniciarSesion(cuenta);
+
+    mostrarToast(`Cuenta creada, ${cuenta.nombre}. Te llevamos a tu panel...`);
+    mostrarCargando();
+    setTimeout(() => irAlPanel(cuenta.rol), 1200);
+  });
+}
 
 // ---------- index.html: autocompletar el buscador con una materia popular ----------
 const inputMateriaHero = document.querySelector('#hero input[name="materia"]');
