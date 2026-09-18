@@ -26,18 +26,43 @@ Por ahora es solo el front-end, todavía no está conectado a un backend ni a un
 - CSS — Diseño, estilos y adaptación responsive.
 - Bootstrap 5.3.8 — Navbar, cards, formularios y grid responsive.
 - Google Fonts (Manrope y Plus Jakarta Sans).
+- JavaScript — Interactividad, validaciones y simulación de cuentas/sesión con `localStorage` (sin backend).
+
+## 🎨 Variables de diseño (CSS)
+
+Todo el sitio toma sus colores, tipografías, sombras y bordes de un solo lugar: el `:root` de `Estilo/style.css`. Cambiar un valor ahí lo actualiza en todo el proyecto.
+
+```css
+:root {
+  --color-primary: #2d8cf0;
+  --color-secondary: #87ceeb;
+  --font-color: #323232;
+  --border-color: #000000;
+  --shadow: 4px 4px var(--border-color);
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --border-radius: 5px;
+  /* + colores de acento (--accent-verde, --accent-naranja, --accent-violeta, --accent-rojo) */
+}
+```
+
+Además, hay un segundo bloque `:root` que pisa las variables propias de Bootstrap (`--bs-primary`, `--bs-border-radius`, etc.) reusando las de arriba. Así los componentes de Bootstrap (`.btn`, `.card`, `.badge`...) ya salen con los colores de la marca, sin tener que escribir CSS extra para cada uno.
 
 ## 📂 Estructura del proyecto
 
 ```
 ├── index.html              # Landing pública
-├── Login.html               # Inicio de sesión (maqueta)
-├── Register.html            # Registro (maqueta)
+├── Login.html               # Inicio de sesión
+├── Register.html            # Registro
 ├── robots.txt / sitemap.xml
 ├── Estilo/                  # Hojas de estilo (una general + una por rol)
-│   ├── style.css
+│   ├── style.css            # Variables (:root) + estilos compartidos
 │   ├── styleAlumnos.css
 │   └── profesor.css
+├── js/                      # Un archivo de JS por sector
+│   ├── principal.js         # index / Login / Register
+│   ├── alumno.js
+│   └── profesor.js
 ├── img/                     # Logos, íconos e imágenes del sitio
 ├── alumno/                  # Pantallas del panel de alumno
 │   ├── principalAlumno.html
@@ -58,6 +83,17 @@ Por ahora es solo el front-end, todavía no está conectado a un backend ni a un
 ## ▶️ Cómo correrlo
 
 Es HTML y CSS estático, no hace falta instalar nada. Cloná el repo y abrí `index.html` con Live Server (o directo con doble clic).
+
+## ⚙️ JavaScript
+
+Cada sector tiene su propio archivo (`js/principal.js`, `js/alumno.js`, `js/profesor.js`), pero comparten datos entre sí a través de `localStorage` (mismo origen, no hace falta backend):
+
+- **Login/Registro**: crear una cuenta la guarda en el navegador y te loguea; iniciar sesión valida contra esas cuentas y te redirige a tu panel según el rol.
+- **Perfil**: el nombre y los datos del dashboard (nivel, ubicación, materia, precio...) son los de la cuenta logueada, y "Editar perfil" los guarda de verdad.
+- **Solicitudes**: cuando un alumno pide una clase, la solicitud le aparece al profesor en `Solicitudes.html` para aceptar o rechazar.
+- Validación de formularios, chat (cambiar de conversación / enviar mensaje), filtro de búsqueda de profesores y un loader para las esperas (login/registro).
+
+> No hay backend real: las contraseñas quedan en texto plano en el navegador y nada de esto se comparte entre dispositivos distintos. Es una simulación pensada para poder demostrar el flujo completo sin servidor.
 
 ## 🔍 SEO
 
